@@ -3,188 +3,202 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Davis Lawn Service &amp; Hauling — Mowing, Cleanups, Junk Removal | Free Quotes</title>
-<meta name="description" content="Davis Lawn Service & Hauling — lawn care, yard cleanups, junk removal and hauling for homes, businesses, and municipal contracts. Licensed, reliable, free quotes.">
+<title>DLS — Davis Lawn Service &amp; Hauling | Mowing, Cleanups, Junk Removal | Free Quotes</title>
+<meta name="description" content="DLS — Davis Lawn Service & Hauling. Lawn care, yard cleanups, junk removal and hauling for homes, businesses, and municipal contracts. Licensed, reliable, free quotes.">
 <!-- ============================================================
      PLACEHOLDERS TO FILL BEFORE LAUNCH (search for TODO):
      1. Phone number — every tel: link + visible numbers  (currently 555 placeholder)
      2. Service area — city/county names in hero, service-area section, JSON-LD
-     3. "Since 20XX" year + licensed/insured claim in trust strip
+     3. "Licensed & insured" claim + years in trust strip
      4. City-contract details in the municipal band (ask Davis what the
         contracts actually cover: right-of-way mowing? code-enforcement lots?
         storm debris? demolition hauls?)
      5. Reviews — swap placeholders for real Facebook reviews
-     6. Before/after — swap CSS scenes for real job photos from their FB page
+     6. Before/after — swap SVG scenes for real job photos from their FB page
      7. GHL form embed — marked slot inside #quote
      ============================================================ -->
+<link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96"><rect x="4" y="4" width="88" height="88" rx="22" fill="%23101114"/><rect x="4" y="4" width="88" height="88" rx="22" fill="none" stroke="%23FF7A1A" stroke-width="5"/><text x="48" y="58" text-anchor="middle" font-family="Arial Black,Arial,sans-serif" font-weight="900" font-size="30" fill="white">DLS</text><path d="M12 72 C 32 80, 62 80, 86 64" stroke="%23FF7A1A" stroke-width="7" fill="none" stroke-linecap="round"/></svg>'>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
 /* ============================================================
-   DAVIS LAWN SERVICE & HAULING — conversion-first, motion accents,
-   zero scroll-jacking. All art is CSS/SVG (no generated images).
+   DLS — DAVIS LAWN SERVICE & HAULING
+   Brand: ORANGE / BLACK / WHITE (green appears only inside the
+   lawn illustrations — grass is grass). Conversion-first, motion
+   accents, zero scroll-jacking. All art is CSS/SVG.
    ============================================================ */
 :root{
-  --green:#1E6B34;
-  --green-deep:#124423;
-  --green-dark:#0C2E17;
-  --lime:#8FD14F;
-  --charcoal:#1C1F24;
-  --asphalt:#2A2E35;
-  --orange:#F2842B;
-  --orange-deep:#D96C15;
-  --paper:#F7F8F4;
-  --ink:#171A16;
-  --line:#E2E5DC;
+  --orange:#FF7A1A;
+  --orange-deep:#E05E00;
+  --orange-soft:#FFF0E3;
+  --black:#101114;
+  --coal:#1A1C20;
+  --coal-2:#24262B;
+  --white:#FFFFFF;
+  --paper:#F6F6F4;
+  --ink:#1C1E22;
+  --gray:#565A61;
+  --line:#E6E6E2;
+  /* illustration-only turf tones */
+  --turf:#2E5B33;
+  --turf-2:#3C7042;
+  --turf-dark:#1F4023;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 body{
   font-family:'Inter',system-ui,sans-serif;color:var(--ink);background:var(--paper);
-  font-size:16px;line-height:1.55;overflow-x:hidden;
+  font-size:17px;line-height:1.55;overflow-x:hidden;
 }
-h1,h2,h3,.display{font-family:'Anton',sans-serif;font-weight:400;line-height:1.04;letter-spacing:.015em;text-transform:uppercase}
+h1,h2,h3,.display{font-family:'Archivo Black',sans-serif;font-weight:400;line-height:1.06;letter-spacing:-.005em;text-transform:uppercase}
 img,svg{max-width:100%;display:block}
 a{color:inherit}
 button{font:inherit;cursor:pointer}
-::selection{background:var(--lime);color:var(--green-dark)}
+::selection{background:var(--orange);color:#fff}
 .skip-link{position:absolute;left:-9999px;top:0;background:var(--orange);color:#fff;padding:12px 20px;z-index:300;font-weight:700;border-radius:0 0 10px 0}
 .skip-link:focus{left:0}
 :focus-visible{outline:3px solid var(--orange);outline-offset:2px;border-radius:4px}
 
 .wrap{max-width:1180px;margin:0 auto;padding:0 clamp(18px,4vw,40px)}
-.kicker{font-weight:800;letter-spacing:.22em;text-transform:uppercase;font-size:.75rem;color:var(--green)}
+.kicker{font-weight:900;letter-spacing:.22em;text-transform:uppercase;font-size:.78rem;color:var(--orange)}
 .section{padding:clamp(64px,9vw,110px) 0}
-.section-head{max-width:640px;margin-bottom:clamp(30px,5vw,54px)}
-.section-head h2{font-size:clamp(1.9rem,4.6vw,3.2rem);color:var(--green-dark);margin-top:10px}
-.section-head p{margin-top:12px;color:#4A5245;font-weight:500}
+.section-head{max-width:680px;margin-bottom:clamp(30px,5vw,54px)}
+.section-head h2{font-size:clamp(1.8rem,4.4vw,3rem);color:var(--black);margin-top:12px}
+.section-head p{margin-top:14px;color:var(--gray);font-weight:600}
 
 /* ---------- buttons ---------- */
 .btn{
   display:inline-flex;align-items:center;justify-content:center;gap:10px;
-  min-height:52px;padding:14px 26px;border-radius:12px;border:0;
-  font-weight:800;font-size:1rem;text-decoration:none;letter-spacing:.01em;
+  min-height:54px;padding:15px 28px;border-radius:12px;border:0;
+  font-weight:800;font-size:1.02rem;text-decoration:none;letter-spacing:.01em;
   transition:transform .18s,box-shadow .18s,background .18s;
 }
 .btn svg{width:20px;height:20px;flex:none}
-.btn-orange{background:var(--orange);color:#fff;box-shadow:0 6px 18px rgba(242,132,43,.38)}
-.btn-orange:hover{background:var(--orange-deep);transform:translateY(-2px);box-shadow:0 10px 24px rgba(242,132,43,.5)}
-.btn-outline{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.55)}
-.btn-outline:hover{background:rgba(255,255,255,.12);transform:translateY(-2px)}
-.btn-green{background:var(--green);color:#fff}
-.btn-green:hover{background:var(--green-deep);transform:translateY(-2px)}
+.btn-orange{background:var(--orange);color:#fff;box-shadow:0 8px 22px rgba(255,122,26,.42)}
+.btn-orange:hover{background:var(--orange-deep);transform:translateY(-2px);box-shadow:0 12px 28px rgba(255,122,26,.55)}
+.btn-outline{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.6)}
+.btn-outline:hover{background:rgba(255,255,255,.14);transform:translateY(-2px)}
+.btn-black{background:var(--black);color:#fff}
+.btn-black:hover{background:var(--coal-2);transform:translateY(-2px)}
 
 /* ---------- header ---------- */
 .site-header{
   position:fixed;inset:0 0 auto 0;z-index:100;
-  background:rgba(12,46,23,.92);backdrop-filter:blur(10px);
-  border-bottom:1px solid rgba(255,255,255,.08);
+  background:rgba(16,17,20,.94);backdrop-filter:blur(10px);
+  border-bottom:2px solid var(--orange);
 }
 .header-in{max-width:1180px;margin:0 auto;padding:10px clamp(18px,4vw,40px);display:flex;align-items:center;justify-content:space-between;gap:16px}
-.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:#fff}
-.brand svg{width:46px;height:46px;flex:none}
-.brand .b-name{font-family:'Anton',sans-serif;font-size:1.15rem;letter-spacing:.04em;line-height:1}
-.brand .b-sub{font-size:.62rem;font-weight:700;letter-spacing:.24em;color:var(--lime);text-transform:uppercase}
+.brand{display:flex;align-items:center;gap:13px;text-decoration:none;color:#fff}
+.brand .logo-badge{width:52px;height:52px;flex:none}
+.brand .b-name{font-family:'Archivo Black',sans-serif;font-size:1.2rem;letter-spacing:.02em;line-height:1;color:#fff}
+.brand .b-sub{font-size:.6rem;font-weight:800;letter-spacing:.26em;color:var(--orange);text-transform:uppercase}
 .main-nav{display:flex;gap:4px}
 .main-nav a{
-  color:rgba(255,255,255,.85);text-decoration:none;font-weight:600;font-size:.9rem;
+  color:rgba(255,255,255,.9);text-decoration:none;font-weight:700;font-size:.92rem;
   padding:10px 14px;border-radius:8px;min-height:44px;display:inline-flex;align-items:center;
   transition:background .18s,color .18s;
 }
-.main-nav a:hover{background:rgba(255,255,255,.12);color:#fff}
-.header-cta{display:flex;align-items:center;gap:10px}
-.header-phone{display:none;color:#fff;font-weight:800;text-decoration:none;font-size:.95rem}
+.main-nav a:hover{background:rgba(255,122,26,.18);color:var(--orange)}
+.header-cta{display:flex;align-items:center;gap:12px}
+.header-phone{display:none;color:#fff;font-weight:800;text-decoration:none;font-size:1rem}
+.header-phone:hover{color:var(--orange)}
 @media(min-width:1020px){.header-phone{display:inline-flex;align-items:center;gap:8px}}
 
 /* ---------- mobile sticky call bar ---------- */
 .mobile-bar{
   position:fixed;left:0;right:0;bottom:0;z-index:110;display:none;
-  grid-template-columns:1fr 1fr;gap:1px;background:var(--green-dark);
+  grid-template-columns:1fr 1fr;gap:1px;background:var(--black);
   transform:translateY(110%);transition:transform .3s ease;
   padding-bottom:env(safe-area-inset-bottom);
-  box-shadow:0 -6px 24px rgba(0,0,0,.25);
+  box-shadow:0 -6px 24px rgba(0,0,0,.3);
 }
 .mobile-bar.show{transform:translateY(0)}
 .mobile-bar a{
   display:flex;align-items:center;justify-content:center;gap:8px;
-  min-height:58px;font-weight:800;text-decoration:none;color:#fff;font-size:1rem;
+  min-height:58px;font-weight:800;text-decoration:none;color:#fff;font-size:1.02rem;
 }
 .mobile-bar a svg{width:20px;height:20px}
-.mobile-bar .m-call{background:var(--green)}
+.mobile-bar .m-call{background:var(--black);border-top:2px solid var(--orange)}
 .mobile-bar .m-quote{background:var(--orange)}
 @media(max-width:860px){
   .mobile-bar{display:grid}
   .main-nav{display:none}
 }
 
-/* ---------- hero ---------- */
+/* ---------- hero — dusk over a fresh-cut lawn ---------- */
 .hero{
   position:relative;min-height:100svh;display:flex;align-items:center;overflow:hidden;
-  background:linear-gradient(180deg,#0E3A1D 0%,var(--green-deep) 45%,var(--green) 100%);
-  padding:120px 0 90px;color:#fff;
+  background:linear-gradient(180deg,#0B0C0E 0%,#17181B 38%,#2A1D10 62%,#4A2A0D 78%);
+  padding:130px 0 90px;color:#fff;
 }
-.sky-glow{position:absolute;top:-18%;right:-8%;width:56vw;height:56vw;border-radius:50%;
-  background:radial-gradient(circle,rgba(143,209,79,.35),rgba(143,209,79,.06) 55%,transparent 70%);pointer-events:none}
-.cloud{position:absolute;opacity:.16;pointer-events:none;will-change:transform}
-/* mown-lawn stripes floor */
+.sun{position:absolute;left:50%;bottom:26%;width:52vw;max-width:680px;aspect-ratio:1;transform:translateX(-50%);
+  background:radial-gradient(circle,rgba(255,140,40,.55),rgba(255,122,26,.18) 45%,transparent 68%);
+  border-radius:50%;pointer-events:none}
+.hero-watermark{
+  position:absolute;top:6%;left:50%;transform:translateX(-50%);
+  font-family:'Archivo Black',sans-serif;font-size:clamp(10rem,30vw,24rem);line-height:1;
+  color:transparent;-webkit-text-stroke:2px rgba(255,255,255,.05);user-select:none;pointer-events:none;
+}
+.bird{position:absolute;opacity:.7;pointer-events:none;will-change:transform}
+.bird path{stroke:#0B0C0E;stroke-width:3;fill:none;stroke-linecap:round}
+.treeline{position:absolute;left:0;right:0;bottom:30%;height:110px;opacity:.9;pointer-events:none}
 .lawn{
-  position:absolute;left:-12%;right:-12%;bottom:-4%;height:38%;
-  background:repeating-linear-gradient(90deg,
-    #1E6B34 0 90px,#2A7F42 90px 180px);
+  position:absolute;left:-12%;right:-12%;bottom:-4%;height:36%;
+  background:repeating-linear-gradient(90deg,var(--turf-dark) 0 90px,var(--turf) 90px 180px);
   transform:perspective(600px) rotateX(58deg);transform-origin:bottom center;
-  box-shadow:inset 0 40px 60px rgba(0,0,0,.35);
+  box-shadow:inset 0 60px 80px rgba(0,0,0,.55);
 }
-.treeline{position:absolute;left:0;right:0;bottom:32%;height:110px;opacity:.5;pointer-events:none}
-.hero-truck{position:absolute;bottom:2.5%;left:2%;width:clamp(150px,18vw,250px);opacity:.95;will-change:transform;filter:drop-shadow(0 14px 24px rgba(0,0,0,.35))}
+.lawn::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,122,26,.14),transparent 55%)}
+.hero-truck{position:absolute;bottom:2.5%;left:2%;width:clamp(150px,18vw,250px);will-change:transform;filter:drop-shadow(0 14px 24px rgba(0,0,0,.5))}
 .hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(28px,5vw,64px);align-items:center}
-.hero-copy .kicker{color:var(--lime)}
-.hero-copy h1{font-size:clamp(2.6rem,6.2vw,4.6rem);margin-top:14px;text-wrap:balance}
-.hero-copy h1 em{font-style:normal;color:var(--lime)}
-.hero-copy .lead{margin-top:18px;font-size:clamp(1.02rem,2vw,1.2rem);color:rgba(255,255,255,.9);font-weight:500;max-width:48ch}
-.hero-ctas{margin-top:30px;display:flex;gap:14px;flex-wrap:wrap}
-.hero-proof{margin-top:34px;display:flex;gap:22px;flex-wrap:wrap}
-.proof-item{display:flex;align-items:center;gap:10px;font-weight:700;font-size:.9rem;color:rgba(255,255,255,.92)}
-.proof-item svg{width:22px;height:22px;color:var(--lime);flex:none}
+.hero-copy .kicker{color:var(--orange)}
+.hero-copy h1{font-size:clamp(2.3rem,5.4vw,4rem);margin-top:16px;text-wrap:balance;color:#fff}
+.hero-copy h1 em{font-style:normal;color:var(--orange)}
+.hero-copy .lead{margin-top:20px;font-size:clamp(1.05rem,2vw,1.22rem);color:rgba(255,255,255,.95);font-weight:600;max-width:48ch}
+.hero-ctas{margin-top:32px;display:flex;gap:14px;flex-wrap:wrap}
+.hero-proof{margin-top:36px;display:flex;gap:22px;flex-wrap:wrap;padding-bottom:70px}
+.proof-item{display:flex;align-items:center;gap:10px;font-weight:800;font-size:.92rem;color:#fff}
+.proof-item svg{width:22px;height:22px;color:var(--orange);flex:none}
 
 /* quote form card */
 .quote-card{
-  background:#fff;color:var(--ink);border-radius:20px;padding:28px 26px;
-  box-shadow:0 28px 60px rgba(0,0,0,.35);
+  background:#fff;color:var(--ink);border-radius:20px;padding:30px 28px;
+  box-shadow:0 28px 60px rgba(0,0,0,.5);
   border-top:6px solid var(--orange);
 }
-.quote-card h2{font-size:1.5rem;color:var(--green-dark)}
-.quote-card .qc-sub{font-size:.9rem;color:#5A6353;font-weight:500;margin-top:6px}
-.quote-form{margin-top:18px;display:grid;gap:12px}
-.quote-form label{font-weight:700;font-size:.82rem;letter-spacing:.04em;text-transform:uppercase;color:#39412F;display:block;margin-bottom:5px}
+.quote-card h2{font-size:1.45rem;color:var(--black)}
+.quote-card .qc-sub{font-size:.94rem;color:var(--gray);font-weight:600;margin-top:6px}
+.quote-form{margin-top:18px;display:grid;gap:13px}
+.quote-form label{font-weight:800;font-size:.8rem;letter-spacing:.05em;text-transform:uppercase;color:var(--coal-2);display:block;margin-bottom:5px}
 .quote-form input,.quote-form select,.quote-form textarea{
-  width:100%;border:2px solid var(--line);border-radius:10px;padding:12px 14px;
-  font:inherit;background:#FBFCF9;transition:border-color .18s;min-height:48px;
+  width:100%;border:2px solid var(--line);border-radius:10px;padding:13px 14px;
+  font:inherit;background:#FBFBFA;transition:border-color .18s;min-height:50px;
 }
 .quote-form textarea{min-height:84px;resize:vertical}
-.quote-form input:focus,.quote-form select:focus,.quote-form textarea:focus{outline:none;border-color:var(--green)}
+.quote-form input:focus,.quote-form select:focus,.quote-form textarea:focus{outline:none;border-color:var(--orange)}
 .quote-form .btn{width:100%}
-.form-note{font-size:.78rem;color:#7A8272;text-align:center;margin-top:2px}
+.form-note{font-size:.8rem;color:var(--gray);text-align:center;margin-top:2px;font-weight:600}
 .form-success{
-  display:none;background:#EAF6E2;border:2px solid var(--lime);border-radius:12px;
-  padding:16px;text-align:center;font-weight:600;color:var(--green-dark);
+  display:none;background:var(--orange-soft);border:2px solid var(--orange);border-radius:12px;
+  padding:16px;text-align:center;font-weight:700;color:var(--coal-2);
 }
 
 /* ---------- marquee ---------- */
-.marquee{overflow:hidden;background:var(--charcoal);padding:14px 0;border-top:3px solid var(--lime);border-bottom:3px solid var(--lime)}
+.marquee{overflow:hidden;background:var(--black);padding:15px 0;border-top:3px solid var(--orange);border-bottom:3px solid var(--orange)}
 .marquee-track{display:flex;width:max-content;will-change:transform}
-.marquee-track span{font-family:'Anton',sans-serif;color:#fff;font-size:clamp(1rem,2.4vw,1.4rem);text-transform:uppercase;letter-spacing:.08em;white-space:nowrap;padding:0 .7em}
-.marquee-track .dot{color:var(--lime)}
+.marquee-track span{font-family:'Archivo Black',sans-serif;color:#fff;font-size:clamp(.95rem,2.2vw,1.3rem);text-transform:uppercase;letter-spacing:.06em;white-space:nowrap;padding:0 .7em}
+.marquee-track .dot{color:var(--orange)}
 
 /* ---------- trust strip ---------- */
 .trust{background:#fff;border-bottom:1px solid var(--line)}
 .trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;padding:clamp(28px,4vw,44px) 0}
 .trust-item{display:flex;align-items:center;gap:14px}
-.trust-item .t-ic{width:52px;height:52px;border-radius:14px;background:#EAF6E2;color:var(--green);display:flex;align-items:center;justify-content:center;flex:none}
+.trust-item .t-ic{width:54px;height:54px;border-radius:14px;background:var(--orange-soft);color:var(--orange-deep);display:flex;align-items:center;justify-content:center;flex:none}
 .trust-item .t-ic svg{width:26px;height:26px}
-.trust-item strong{display:block;font-size:1rem;color:var(--green-dark)}
-.trust-item small{color:#5A6353;font-weight:500}
+.trust-item strong{display:block;font-size:1.02rem;color:var(--black)}
+.trust-item small{color:var(--gray);font-weight:600}
 @media(max-width:900px){.trust-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:520px){.trust-grid{grid-template-columns:1fr 1fr;gap:14px}.trust-item{flex-direction:column;text-align:center}}
 
@@ -195,71 +209,53 @@ button{font:inherit;cursor:pointer}
   background:#fff;border:1px solid var(--line);border-radius:18px;padding:30px 26px;
   transition:transform .2s,box-shadow .2s,border-color .2s;display:flex;flex-direction:column;
 }
-.svc-card:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(18,68,35,.14);border-color:var(--lime)}
-.svc-ic{width:58px;height:58px;border-radius:16px;background:linear-gradient(135deg,var(--green),var(--green-deep));color:#fff;display:flex;align-items:center;justify-content:center;margin-bottom:18px}
+.svc-card:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(16,17,20,.14);border-color:var(--orange)}
+.svc-ic{width:58px;height:58px;border-radius:16px;background:var(--black);color:var(--orange);display:flex;align-items:center;justify-content:center;margin-bottom:18px}
 .svc-ic svg{width:30px;height:30px}
-.svc-card h3{font-size:1.15rem;color:var(--green-dark);margin-bottom:8px}
-.svc-card p{color:#4A5245;font-weight:500;font-size:.94rem;flex:1}
-.svc-card .svc-link{margin-top:16px;font-weight:800;color:var(--orange);text-decoration:none;display:inline-flex;align-items:center;gap:6px}
+.svc-card h3{font-size:1.08rem;color:var(--black);margin-bottom:10px}
+.svc-card p{color:var(--coal-2);font-weight:500;font-size:.96rem;flex:1}
+.svc-card .svc-link{margin-top:16px;font-weight:800;color:var(--orange-deep);text-decoration:none;display:inline-flex;align-items:center;gap:6px}
 .svc-card .svc-link:hover{text-decoration:underline}
 @media(max-width:900px){.svc-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:560px){.svc-grid{grid-template-columns:1fr}}
 
 /* ---------- municipal band ---------- */
-.muni{background:linear-gradient(135deg,var(--charcoal),#14261B 70%,var(--green-dark));color:#fff;position:relative;overflow:hidden}
-.muni::after{content:"";position:absolute;right:-140px;top:-140px;width:420px;height:420px;border-radius:50%;
-  background:radial-gradient(circle,rgba(143,209,79,.18),transparent 65%)}
+.muni{background:linear-gradient(135deg,var(--black),var(--coal) 60%,#2A1A0A);color:#fff;position:relative;overflow:hidden}
+.muni::after{content:"";position:absolute;right:-140px;top:-140px;width:460px;height:460px;border-radius:50%;
+  background:radial-gradient(circle,rgba(255,122,26,.22),transparent 65%)}
 .muni-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(26px,5vw,60px);align-items:center;position:relative;z-index:1}
-.muni h2{font-size:clamp(1.8rem,4.2vw,3rem);color:#fff}
-.muni h2 em{font-style:normal;color:var(--lime)}
-.muni p{color:rgba(255,255,255,.85);font-weight:500;margin-top:14px}
+.muni h2{font-size:clamp(1.7rem,4vw,2.8rem);color:#fff}
+.muni h2 em{font-style:normal;color:var(--orange)}
+.muni p{color:rgba(255,255,255,.92);font-weight:500;margin-top:14px}
 .muni-list{margin-top:22px;display:grid;gap:12px}
-.muni-list li{list-style:none;display:flex;gap:12px;align-items:flex-start;font-weight:600}
-.muni-list svg{width:22px;height:22px;color:var(--lime);flex:none;margin-top:2px}
-.muni-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:18px;padding:30px;backdrop-filter:blur(4px)}
-.muni-card h3{color:#fff;font-size:1.2rem}
-.muni-card p{font-size:.92rem}
+.muni-list li{list-style:none;display:flex;gap:12px;align-items:flex-start;font-weight:700}
+.muni-list svg{width:22px;height:22px;color:var(--orange);flex:none;margin-top:2px}
+.muni-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,122,26,.4);border-radius:18px;padding:30px;backdrop-filter:blur(4px)}
+.muni-card h3{color:#fff;font-size:1.15rem}
+.muni-card p{font-size:.94rem}
 @media(max-width:860px){.muni-grid{grid-template-columns:1fr}}
 
 /* ---------- how it works ---------- */
 .steps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2.5vw,28px)}
 .step{position:relative;background:#fff;border:1px solid var(--line);border-radius:18px;padding:34px 26px 28px}
 .step .s-num{
-  position:absolute;top:-22px;left:24px;width:44px;height:44px;border-radius:12px;
-  background:var(--orange);color:#fff;font-family:'Anton',sans-serif;font-size:1.25rem;
+  position:absolute;top:-22px;left:24px;width:46px;height:46px;border-radius:12px;
+  background:var(--black);color:var(--orange);font-family:'Archivo Black',sans-serif;font-size:1.2rem;
   display:flex;align-items:center;justify-content:center;transform:rotate(-4deg);
-  box-shadow:0 8px 18px rgba(242,132,43,.4);
+  box-shadow:0 8px 18px rgba(16,17,20,.35);border:2px solid var(--orange);
 }
-.step h3{color:var(--green-dark);font-size:1.1rem;margin-bottom:8px;margin-top:6px}
-.step p{color:#4A5245;font-weight:500;font-size:.94rem}
+.step h3{color:var(--black);font-size:1.05rem;margin-bottom:10px;margin-top:8px}
+.step p{color:var(--coal-2);font-weight:500;font-size:.96rem}
 @media(max-width:820px){.steps-grid{grid-template-columns:1fr}.step{margin-top:16px}}
 
 /* ---------- before / after ---------- */
 .ba{background:#fff}
 .ba-frame{
   position:relative;border-radius:20px;overflow:hidden;border:1px solid var(--line);
-  box-shadow:0 24px 50px rgba(18,68,35,.16);aspect-ratio:16/7;min-height:280px;user-select:none;
+  box-shadow:0 24px 50px rgba(16,17,20,.18);aspect-ratio:16/7;min-height:280px;user-select:none;
 }
 .ba-scene{position:absolute;inset:0}
-/* AFTER scene — striped healthy lawn */
-.scene-after{background:
-  linear-gradient(180deg,#BFE3F7 0 34%,transparent 34%),
-  repeating-linear-gradient(90deg,#2A7F42 0 70px,#1E6B34 70px 140px)}
-.scene-after::before{content:"";position:absolute;left:0;right:0;top:26%;height:9%;
-  background:radial-gradient(60px 22px at 12% 50%,#2E5B3C 60%,transparent 62%),
-             radial-gradient(80px 26px at 34% 50%,#35684A 60%,transparent 62%),
-             radial-gradient(70px 24px at 58% 50%,#2E5B3C 60%,transparent 62%),
-             radial-gradient(90px 28px at 84% 50%,#35684A 60%,transparent 62%)}
-/* BEFORE scene — patchy overgrown yard w/ junk pile silhouette */
-.scene-before{background:
-  linear-gradient(180deg,#C9C29B 0 34%,transparent 34%),
-  repeating-linear-gradient(74deg,#7A7A3C 0 26px,#8B8A48 26px 52px,#6E6D35 52px 74px)}
-.scene-before::after{content:"";position:absolute;bottom:12%;right:8%;width:26%;height:34%;
-  background:
-    radial-gradient(48% 60% at 30% 80%,#4A4438 0 60%,transparent 61%),
-    radial-gradient(40% 52% at 62% 74%,#5A5348 0 60%,transparent 61%),
-    radial-gradient(30% 40% at 84% 86%,#3D382E 0 60%,transparent 61%);
-  filter:blur(1px)}
+.ba-scene svg{width:100%;height:100%}
 .ba-clip{position:absolute;inset:0;clip-path:inset(0 50% 0 0)}
 .ba-handle{
   position:absolute;top:0;bottom:0;left:50%;width:4px;background:#fff;z-index:3;
@@ -267,7 +263,7 @@ button{font:inherit;cursor:pointer}
 }
 .ba-handle::after{
   content:"\2194";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
-  width:48px;height:48px;border-radius:50%;background:var(--orange);color:#fff;
+  width:50px;height:50px;border-radius:50%;background:var(--orange);color:#fff;
   display:flex;align-items:center;justify-content:center;font-size:1.3rem;font-weight:700;
   box-shadow:0 6px 18px rgba(0,0,0,.35);
 }
@@ -275,19 +271,20 @@ button{font:inherit;cursor:pointer}
   position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;z-index:4;
   -webkit-appearance:none;appearance:none;
 }
-.ba-tag{position:absolute;top:14px;z-index:2;background:rgba(0,0,0,.55);color:#fff;font-weight:800;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;padding:7px 12px;border-radius:8px}
+.ba-tag{position:absolute;top:14px;z-index:2;background:rgba(16,17,20,.75);color:#fff;font-weight:800;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;padding:7px 12px;border-radius:8px}
 .ba-tag.before{left:14px}
-.ba-tag.after{right:14px}
-.ba-note{margin-top:14px;text-align:center;font-size:.85rem;color:#7A8272;font-weight:500}
+.ba-tag.after{right:14px;background:var(--orange)}
+.ba-note{margin-top:14px;text-align:center;font-size:.88rem;color:var(--gray);font-weight:600}
+.ba-note a{color:var(--orange-deep);font-weight:800}
 
 /* ---------- reviews ---------- */
 .reviews{background:var(--paper)}
 .rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2.4vw,26px)}
 .rev-card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:28px 24px;display:flex;flex-direction:column;gap:12px}
-.stars{color:var(--orange);letter-spacing:2px;font-size:1.05rem}
-.rev-card p{color:#3C4436;font-weight:500;font-style:italic;flex:1}
-.rev-card .who{font-weight:800;color:var(--green-dark);font-size:.9rem}
-.rev-card .who small{display:block;color:#7A8272;font-weight:600}
+.stars{color:var(--orange);letter-spacing:2px;font-size:1.1rem}
+.rev-card p{color:var(--coal-2);font-weight:500;font-style:italic;flex:1}
+.rev-card .who{font-weight:800;color:var(--black);font-size:.92rem}
+.rev-card .who small{display:block;color:var(--gray);font-weight:600}
 @media(max-width:820px){.rev-grid{grid-template-columns:1fr}}
 
 /* ---------- service area ---------- */
@@ -296,8 +293,8 @@ button{font:inherit;cursor:pointer}
 .area-map{position:relative;display:flex;align-items:center;justify-content:center}
 .area-map svg{width:100%;max-width:420px}
 .area-list{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:20px}
-.area-list li{list-style:none;display:flex;align-items:center;gap:10px;font-weight:600;color:#39412F}
-.area-list svg{width:18px;height:18px;color:var(--green);flex:none}
+.area-list li{list-style:none;display:flex;align-items:center;gap:10px;font-weight:700;color:var(--coal-2)}
+.area-list svg{width:18px;height:18px;color:var(--orange);flex:none}
 @media(max-width:820px){.area-grid{grid-template-columns:1fr}}
 
 /* ---------- FAQ ---------- */
@@ -305,37 +302,42 @@ button{font:inherit;cursor:pointer}
 .faq-list{max-width:760px}
 .faq-list details{background:#fff;border:1px solid var(--line);border-radius:14px;margin-bottom:12px;overflow:hidden}
 .faq-list summary{
-  cursor:pointer;font-weight:700;color:var(--green-dark);padding:18px 20px;list-style:none;
+  cursor:pointer;font-weight:800;color:var(--black);padding:18px 20px;list-style:none;
   display:flex;justify-content:space-between;align-items:center;gap:14px;min-height:56px;
 }
 .faq-list summary::-webkit-details-marker{display:none}
-.faq-list summary::after{content:"+";font-family:'Anton',sans-serif;font-size:1.3rem;color:var(--orange);transition:transform .2s}
+.faq-list summary::after{content:"+";font-family:'Archivo Black',sans-serif;font-size:1.2rem;color:var(--orange);transition:transform .2s}
 .faq-list details[open] summary::after{transform:rotate(45deg)}
-.faq-list details p{padding:0 20px 18px;color:#4A5245;font-weight:500}
+.faq-list details p{padding:0 20px 18px;color:var(--coal-2);font-weight:500}
 
 /* ---------- final CTA + footer ---------- */
-.final-cta{background:linear-gradient(135deg,var(--green-deep),var(--green));color:#fff;text-align:center}
-.final-cta h2{font-size:clamp(2rem,5vw,3.4rem);color:#fff}
-.final-cta h2 em{font-style:normal;color:var(--lime)}
-.final-cta p{margin-top:14px;color:rgba(255,255,255,.88);font-weight:500}
+.final-cta{background:var(--black);color:#fff;text-align:center;position:relative;overflow:hidden}
+.final-cta::before{content:"";position:absolute;left:50%;top:-40%;width:800px;height:800px;transform:translateX(-50%);
+  background:radial-gradient(circle,rgba(255,122,26,.22),transparent 60%);pointer-events:none}
+.final-cta .wrap{position:relative;z-index:1}
+.final-cta h2{font-size:clamp(1.9rem,4.6vw,3.1rem);color:#fff}
+.final-cta h2 em{font-style:normal;color:var(--orange)}
+.final-cta p{margin-top:14px;color:rgba(255,255,255,.92);font-weight:600}
 .final-cta .hero-ctas{justify-content:center}
-.site-footer{background:var(--green-dark);color:rgba(255,255,255,.85);padding:46px 0 110px}
+.site-footer{background:#0B0C0E;color:rgba(255,255,255,.88);padding:46px 0 110px;border-top:2px solid var(--orange)}
 .footer-grid{display:flex;flex-wrap:wrap;gap:30px;justify-content:space-between;align-items:flex-start}
 .site-footer .brand .b-name{color:#fff}
-.site-footer a{color:rgba(255,255,255,.85)}
-.footer-col strong{display:block;color:#fff;margin-bottom:10px;font-size:.9rem;letter-spacing:.08em;text-transform:uppercase}
-.footer-col a{display:block;text-decoration:none;font-weight:500;margin-bottom:8px}
-.footer-col a:hover{color:var(--lime)}
-.fb-pill{display:inline-flex!important;align-items:center;gap:8px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:999px;padding:10px 18px;font-weight:700!important}
+.site-footer a{color:rgba(255,255,255,.88)}
+.footer-col strong{display:block;color:var(--orange);margin-bottom:10px;font-size:.9rem;letter-spacing:.08em;text-transform:uppercase}
+.footer-col a{display:block;text-decoration:none;font-weight:600;margin-bottom:8px}
+.footer-col a:hover{color:var(--orange)}
+.fb-pill{display:inline-flex!important;align-items:center;gap:8px;background:rgba(255,255,255,.08);border:1px solid rgba(255,122,26,.5);border-radius:999px;padding:10px 18px;font-weight:800!important}
 .fb-pill svg{width:18px;height:18px}
-.footer-fine{margin-top:34px;padding-top:20px;border-top:1px solid rgba(255,255,255,.12);font-size:.82rem;color:rgba(255,255,255,.55);font-weight:500}
+.footer-fine{margin-top:34px;padding-top:20px;border-top:1px solid rgba(255,255,255,.12);font-size:.84rem;color:rgba(255,255,255,.55);font-weight:600}
 @media(min-width:861px){.site-footer{padding-bottom:46px}}
 
 /* ---------- responsive hero ---------- */
 @media(max-width:900px){
-  .hero{padding:110px 0 70px}
+  .hero{padding:115px 0 70px}
   .hero-grid{grid-template-columns:1fr}
   .hero-truck{display:none}
+  .hero-proof{padding-bottom:0}
+  .hero-watermark{font-size:9rem;top:4%}
 }
 /* ---------- reduced motion ---------- */
 @media (prefers-reduced-motion:reduce){
@@ -349,20 +351,25 @@ button{font:inherit;cursor:pointer}
 <!-- ================= HEADER ================= -->
 <header class="site-header">
   <div class="header-in">
-    <a class="brand" href="#top" aria-label="Davis Lawn Service and Hauling — home">
-      <!-- Logo: shield, D monogram sprouting grass, truck silhouette -->
-      <svg viewBox="0 0 96 96" role="img" aria-hidden="true">
-        <path d="M48 4 88 16v34c0 22-16 36-40 42C24 86 8 72 8 50V16Z" fill="#1E6B34" stroke="#8FD14F" stroke-width="4" stroke-linejoin="round"/>
-        <text x="48" y="52" text-anchor="middle" font-family="Anton, Arial Black, sans-serif" font-size="38" fill="#fff">D</text>
-        <path d="M40 24c0-6 2-11 2-11s3 4 3 10M47 23c1-7 5-12 5-12s2 6 0 12M55 24c2-5 6-8 6-8s0 5-3 9"
-          fill="none" stroke="#8FD14F" stroke-width="3.4" stroke-linecap="round"/>
-        <g fill="#fff">
-          <path d="M28 62h22v9H28zM50 64h9l5 5v2h-14z"/>
-          <circle cx="35" cy="73" r="3.6" fill="#0C2E17" stroke="#fff" stroke-width="2"/>
-          <circle cx="56" cy="73" r="3.6" fill="#0C2E17" stroke="#fff" stroke-width="2"/>
+    <a class="brand" href="#top" aria-label="DLS — Davis Lawn Service and Hauling — home">
+      <!-- DLS logo badge: black plate, orange keyline, DLS letters,
+           mow-swoosh cutting through with grass blades at the end -->
+      <svg class="logo-badge" viewBox="0 0 96 96" role="img" aria-hidden="true">
+        <rect x="4" y="4" width="88" height="88" rx="22" fill="#101114"/>
+        <rect x="4" y="4" width="88" height="88" rx="22" fill="none" stroke="#FF7A1A" stroke-width="4"/>
+        <text class="logo-dls" x="48" y="55" text-anchor="middle"
+          font-family="'Archivo Black','Arial Black',sans-serif" font-size="28" fill="#FFFFFF">DLS</text>
+        <path class="logo-swoosh" d="M12 71 C 32 80, 60 80, 85 63"
+          stroke="#FF7A1A" stroke-width="7" fill="none" stroke-linecap="round"/>
+        <g class="logo-blades" stroke="#FF7A1A" stroke-width="3.4" stroke-linecap="round" fill="none">
+          <path d="M76 58c1-7 6-11 6-11s1 7-3 12"/>
+          <path d="M83 60c4-5 9-6 9-6s-2 7-7 9"/>
+        </g>
+        <g class="logo-clips" fill="#FFFFFF" opacity=".85">
+          <circle cx="26" cy="80" r="1.6"/><circle cx="38" cy="83" r="1.4"/><circle cx="52" cy="83.5" r="1.6"/>
         </g>
       </svg>
-      <span><span class="b-name">DAVIS</span><br><span class="b-sub">Lawn Service &amp; Hauling</span></span>
+      <span><span class="b-name">DLS</span><br><span class="b-sub">Davis Lawn Service &amp; Hauling</span></span>
     </a>
     <nav class="main-nav" aria-label="Main">
       <a href="#services">Services</a>
@@ -372,7 +379,7 @@ button{font:inherit;cursor:pointer}
     </nav>
     <div class="header-cta">
       <!-- TODO: real phone number in BOTH the tel: link and the visible text -->
-      <a class="header-phone" href="tel:+15550123456" aria-label="Call Davis Lawn Service">
+      <a class="header-phone" href="tel:+15550123456" aria-label="Call DLS">
         <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
         (555) 012-3456
       </a>
@@ -397,24 +404,25 @@ button{font:inherit;cursor:pointer}
 <main id="top">
 
 <!-- ================= HERO ================= -->
-<section class="hero" aria-label="Davis Lawn Service and Hauling">
-  <div class="sky-glow" aria-hidden="true"></div>
-  <svg class="cloud" style="width:180px;top:14%;left:8%" viewBox="0 0 120 40" aria-hidden="true"><ellipse cx="30" cy="26" rx="26" ry="12" fill="#fff"/><ellipse cx="60" cy="20" rx="30" ry="14" fill="#fff"/><ellipse cx="92" cy="27" rx="24" ry="11" fill="#fff"/></svg>
-  <svg class="cloud" style="width:120px;top:8%;right:22%" viewBox="0 0 120 40" aria-hidden="true"><ellipse cx="30" cy="26" rx="26" ry="12" fill="#fff"/><ellipse cx="60" cy="20" rx="30" ry="14" fill="#fff"/><ellipse cx="92" cy="27" rx="24" ry="11" fill="#fff"/></svg>
+<section class="hero" aria-label="DLS — Davis Lawn Service and Hauling">
+  <div class="hero-watermark" aria-hidden="true">DLS</div>
+  <div class="sun" aria-hidden="true"></div>
+  <svg class="bird" style="width:52px;top:16%;left:18%" viewBox="0 0 60 20" aria-hidden="true"><path d="M2 14 Q 15 2 30 12 Q 45 2 58 14"/></svg>
+  <svg class="bird" style="width:36px;top:11%;left:30%" viewBox="0 0 60 20" aria-hidden="true"><path d="M2 14 Q 15 2 30 12 Q 45 2 58 14"/></svg>
   <svg class="treeline" preserveAspectRatio="none" viewBox="0 0 1200 110" aria-hidden="true">
-    <path d="M0 110V70c30-8 40-30 60-30s25 18 50 22 35-26 60-26 30 20 55 24 40-34 70-34 35 26 60 30 30-14 55-14 30 12 55 16 45-28 75-28 35 22 60 26 30-10 55-10 35 14 60 18 40-30 70-30 30 22 55 26 35-12 60-12 30 14 55 18 40-24 65-24 40 26 75 30v40Z" fill="#0C2E17"/>
+    <path d="M0 110V70c30-8 40-30 60-30s25 18 50 22 35-26 60-26 30 20 55 24 40-34 70-34 35 26 60 30 30-14 55-14 30 12 55 16 45-28 75-28 35 22 60 26 30-10 55-10 35 14 60 18 40-30 70-30 30 22 55 26 35-12 60-12 30 14 55 18 40-24 65-24 40 26 75 30v40Z" fill="#08090B"/>
   </svg>
   <div class="lawn" aria-hidden="true"></div>
   <!-- truck (drives in on load) -->
   <svg class="hero-truck" id="hero-truck" viewBox="0 0 300 140" aria-hidden="true">
-    <rect x="10" y="52" width="150" height="52" rx="6" fill="#2A2E35"/>
-    <rect x="16" y="40" width="138" height="18" rx="4" fill="#F2842B"/>
-    <path d="M160 66h58l26 22v16h-84z" fill="#1C1F24"/>
-    <path d="M212 72h14l16 14h-30z" fill="#BFE3F7" opacity=".85"/>
-    <rect x="10" y="98" width="234" height="10" rx="4" fill="#14171B"/>
-    <circle cx="58" cy="112" r="17" fill="#14171B" stroke="#DDE3E9" stroke-width="5"/>
-    <circle cx="196" cy="112" r="17" fill="#14171B" stroke="#DDE3E9" stroke-width="5"/>
-    <text x="84" y="88" text-anchor="middle" font-family="Anton, Arial Black, sans-serif" font-size="20" fill="#8FD14F">DAVIS</text>
+    <rect x="10" y="52" width="150" height="52" rx="6" fill="#1A1C20"/>
+    <rect x="16" y="40" width="138" height="18" rx="4" fill="#FF7A1A"/>
+    <path d="M160 66h58l26 22v16h-84z" fill="#101114"/>
+    <path d="M212 72h14l16 14h-30z" fill="#BFD9EE" opacity=".85"/>
+    <rect x="10" y="98" width="234" height="10" rx="4" fill="#08090B"/>
+    <circle cx="58" cy="112" r="17" fill="#08090B" stroke="#E8E8E6" stroke-width="5"/>
+    <circle cx="196" cy="112" r="17" fill="#08090B" stroke="#E8E8E6" stroke-width="5"/>
+    <text x="84" y="88" text-anchor="middle" font-family="'Archivo Black','Arial Black',sans-serif" font-size="20" fill="#FF7A1A">DLS</text>
   </svg>
 
   <div class="wrap hero-grid">
@@ -422,7 +430,7 @@ button{font:inherit;cursor:pointer}
       <p class="kicker">Lawn care &middot; Hauling &middot; Cleanups</p>
       <!-- TODO: confirm service area wording -->
       <h1>Clean yards. <em>Cleared lots.</em> Gone junk.</h1>
-      <p class="lead">Davis Lawn Service &amp; Hauling keeps homes, businesses, and city properties looking sharp — mowing, cleanups, and junk hauled off the same week you call.</p>
+      <p class="lead">DLS keeps homes, businesses, and city properties looking sharp — mowing, cleanups, and junk hauled off the same week you call.</p>
       <div class="hero-ctas">
         <a class="btn btn-orange" href="#quote">Get my free quote</a>
         <!-- TODO: real phone number -->
@@ -446,7 +454,7 @@ button{font:inherit;cursor:pointer}
            GHL EMBED SLOT — replace this form with the GoHighLevel
            form/survey embed when the sub-account is live. Keep the
            heading above. Until then, submissions open a pre-filled
-           email/SMS the visitor sends themselves.
+           email the visitor sends themselves.
            ============================================================ -->
       <form class="quote-form" id="quote-form" novalidate>
         <div>
@@ -480,7 +488,7 @@ button{font:inherit;cursor:pointer}
       <div class="form-success" id="form-success">
         Thanks! Your email app just opened with your request ready to send — hit send and we'll get right back to you. Or call us now:
         <!-- TODO: real phone number -->
-        <a href="tel:+15550123456" style="font-weight:800">(555) 012-3456</a>
+        <a href="tel:+15550123456" style="font-weight:800;color:var(--orange-deep)">(555) 012-3456</a>
       </div>
     </div>
   </div>
@@ -499,7 +507,7 @@ button{font:inherit;cursor:pointer}
 </div>
 
 <!-- ================= TRUST STRIP ================= -->
-<section class="trust" aria-label="Why choose Davis">
+<section class="trust" aria-label="Why choose DLS">
   <div class="wrap trust-grid">
     <!-- TODO: confirm licensed/insured, years, and contract claims with Davis -->
     <div class="trust-item">
@@ -574,13 +582,13 @@ button{font:inherit;cursor:pointer}
 <section class="muni section" id="commercial" aria-labelledby="muni-h">
   <div class="wrap muni-grid">
     <div>
-      <p class="kicker" style="color:var(--lime)">Commercial &amp; municipal</p>
+      <p class="kicker">Commercial &amp; municipal</p>
       <h2 id="muni-h">Trusted with <em>public work</em></h2>
       <!-- TODO: Ask Davis exactly what the city contracts cover and rewrite
            this paragraph with specifics (right-of-way mowing? code-enforcement
            lot mowing? storm debris removal? demolition hauling?). Specific
            beats generic for winning more bids. -->
-      <p>Davis Lawn Service &amp; Hauling holds municipal contracts and takes on commercial properties — the crews, equipment, and reliability to keep public and business spaces maintained on schedule, every time.</p>
+      <p>DLS holds municipal contracts and takes on commercial properties — the crews, equipment, and reliability to keep public and business spaces maintained on schedule, every time.</p>
       <ul class="muni-list">
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Scheduled maintenance for commercial properties &amp; HOAs</li>
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Municipal lot mowing &amp; clearing</li>
@@ -633,12 +641,85 @@ button{font:inherit;cursor:pointer}
       <p class="kicker">The difference</p>
       <h2 id="ba-h">Drag to see what a visit does</h2>
     </div>
-    <!-- TODO: replace the two CSS scenes with real before/after job photos
+    <!-- TODO: replace the two SVG scenes with real before/after job photos
          from their Facebook page when you get them (same slider works:
          put an <img> inside each .ba-scene). -->
     <div class="ba-frame">
-      <div class="ba-scene scene-after" aria-hidden="true"></div>
-      <div class="ba-clip" id="ba-clip"><div class="ba-scene scene-before" aria-hidden="true"></div></div>
+      <!-- AFTER: striped lawn, trimmed hedge, straight fence, clear sky -->
+      <div class="ba-scene" aria-hidden="true">
+        <svg viewBox="0 0 1600 700" preserveAspectRatio="xMidYMid slice">
+          <defs>
+            <pattern id="stripes" width="220" height="460" patternUnits="userSpaceOnUse" patternTransform="skewX(-12)">
+              <rect width="110" height="460" fill="#3C7042"/>
+              <rect x="110" width="110" height="460" fill="#2E5B33"/>
+            </pattern>
+          </defs>
+          <rect width="1600" height="700" fill="#CFE6F4"/>
+          <circle cx="1310" cy="120" r="70" fill="#FFD9A8"/>
+          <circle cx="1310" cy="120" r="100" fill="#FFD9A8" opacity=".35"/>
+          <rect y="240" width="1600" height="460" fill="#2E5B33"/>
+          <rect y="240" width="1600" height="460" fill="url(#stripes)"/>
+          <path d="M760 700 L860 240 L960 240 L1140 700 Z" fill="#D9D4C8"/>
+          <g fill="#24512B">
+            <ellipse cx="180" cy="252" rx="90" ry="46"/>
+            <ellipse cx="360" cy="250" rx="95" ry="50"/>
+            <ellipse cx="545" cy="252" rx="90" ry="46"/>
+          </g>
+          <g fill="#E8E4DA">
+            <rect x="700" y="196" width="860" height="14" rx="4"/>
+            <rect x="700" y="238" width="860" height="14" rx="4"/>
+            <rect x="730" y="176" width="18" height="92" rx="4"/>
+            <rect x="880" y="176" width="18" height="92" rx="4"/>
+            <rect x="1030" y="176" width="18" height="92" rx="4"/>
+            <rect x="1180" y="176" width="18" height="92" rx="4"/>
+            <rect x="1330" y="176" width="18" height="92" rx="4"/>
+            <rect x="1480" y="176" width="18" height="92" rx="4"/>
+          </g>
+        </svg>
+      </div>
+      <!-- BEFORE: patchy dry grass, weeds, junk pile, leaning fence -->
+      <div class="ba-clip" id="ba-clip">
+        <div class="ba-scene" aria-hidden="true">
+          <svg viewBox="0 0 1600 700" preserveAspectRatio="xMidYMid slice">
+            <rect width="1600" height="700" fill="#C9C4B2"/>
+            <rect y="240" width="1600" height="460" fill="#8B8A48"/>
+            <g fill="#6E6D35">
+              <ellipse cx="300" cy="420" rx="180" ry="60"/>
+              <ellipse cx="900" cy="560" rx="260" ry="80"/>
+              <ellipse cx="1400" cy="420" rx="200" ry="70"/>
+            </g>
+            <g fill="#A99F62">
+              <ellipse cx="600" cy="360" rx="140" ry="46"/>
+              <ellipse cx="1150" cy="330" rx="120" ry="40"/>
+            </g>
+            <g stroke="#5E5C2A" stroke-width="7" stroke-linecap="round" fill="none">
+              <path d="M240 330c-6-50-22-70-22-70M240 330c0-55 12-80 12-80M240 330c8-40 30-60 30-60"/>
+              <path d="M760 300c-6-44-20-62-20-62M760 300c0-48 10-70 10-70M760 300c8-36 26-52 26-52"/>
+              <path d="M1240 560c-8-60-26-84-26-84M1240 560c0-64 14-92 14-92M1240 560c10-48 34-70 34-70"/>
+            </g>
+            <g fill="#B4AB97" transform="rotate(-4 1100 220)">
+              <rect x="700" y="200" width="860" height="14" rx="4"/>
+              <rect x="700" y="244" width="860" height="14" rx="4"/>
+              <rect x="740" y="180" width="18" height="94" rx="4" transform="rotate(6 749 227)"/>
+              <rect x="900" y="180" width="18" height="94" rx="4"/>
+              <rect x="1060" y="180" width="18" height="94" rx="4" transform="rotate(-7 1069 227)"/>
+              <rect x="1220" y="180" width="18" height="94" rx="4"/>
+              <rect x="1380" y="180" width="18" height="94" rx="4" transform="rotate(5 1389 227)"/>
+            </g>
+            <g>
+              <ellipse cx="1180" cy="600" rx="230" ry="46" fill="#54503F" opacity=".5"/>
+              <rect x="1080" y="470" width="150" height="110" rx="8" fill="#7A6A4C"/>
+              <rect x="1080" y="470" width="150" height="26" rx="8" fill="#8F7C58"/>
+              <circle cx="1300" cy="560" r="52" fill="#2E2C28"/>
+              <circle cx="1300" cy="560" r="24" fill="#8B8A48"/>
+              <circle cx="1350" cy="590" r="46" fill="#3A3833"/>
+              <circle cx="1350" cy="590" r="20" fill="#8B8A48"/>
+              <ellipse cx="1020" cy="590" rx="66" ry="44" fill="#4E4A42"/>
+              <ellipse cx="960" cy="606" rx="50" ry="34" fill="#5C574D"/>
+            </g>
+          </svg>
+        </div>
+      </div>
       <span class="ba-tag before">Before</span>
       <span class="ba-tag after">After</span>
       <div class="ba-handle" id="ba-handle" aria-hidden="true"></div>
@@ -681,21 +762,21 @@ button{font:inherit;cursor:pointer}
   <div class="wrap area-grid">
     <div class="area-map" aria-hidden="true">
       <svg viewBox="0 0 300 260">
-        <path d="M60 40c40-24 110-28 150 0 30 22 44 60 36 100-8 42-40 76-86 82-44 6-90-14-110-52C30 132 24 62 60 40z" fill="#EAF6E2" stroke="#8FD14F" stroke-width="3" stroke-dasharray="8 6"/>
-        <circle cx="150" cy="128" r="10" fill="#F2842B"/>
-        <circle cx="150" cy="128" r="20" fill="none" stroke="#F2842B" stroke-width="2" opacity=".5"/>
-        <circle cx="150" cy="128" r="32" fill="none" stroke="#F2842B" stroke-width="2" opacity=".25"/>
-        <circle cx="96" cy="90" r="5" fill="#1E6B34"/>
-        <circle cx="205" cy="86" r="5" fill="#1E6B34"/>
-        <circle cx="212" cy="170" r="5" fill="#1E6B34"/>
-        <circle cx="92" cy="180" r="5" fill="#1E6B34"/>
+        <path d="M60 40c40-24 110-28 150 0 30 22 44 60 36 100-8 42-40 76-86 82-44 6-90-14-110-52C30 132 24 62 60 40z" fill="#FFF0E3" stroke="#FF7A1A" stroke-width="3" stroke-dasharray="8 6"/>
+        <circle cx="150" cy="128" r="10" fill="#FF7A1A"/>
+        <circle cx="150" cy="128" r="20" fill="none" stroke="#FF7A1A" stroke-width="2" opacity=".5"/>
+        <circle cx="150" cy="128" r="32" fill="none" stroke="#FF7A1A" stroke-width="2" opacity=".25"/>
+        <circle cx="96" cy="90" r="5" fill="#101114"/>
+        <circle cx="205" cy="86" r="5" fill="#101114"/>
+        <circle cx="212" cy="170" r="5" fill="#101114"/>
+        <circle cx="92" cy="180" r="5" fill="#101114"/>
       </svg>
     </div>
     <div>
       <p class="kicker">Where we work</p>
       <!-- TODO: real city/county names -->
-      <h2 id="area-h" style="font-size:clamp(1.9rem,4.6vw,3rem);color:var(--green-dark);margin-top:10px">Serving [City] and surrounding areas</h2>
-      <p style="margin-top:12px;color:#4A5245;font-weight:500">In the area? You're on the route. Not sure? Call — if we can get a truck to it, we'll quote it.</p>
+      <h2 id="area-h" style="font-size:clamp(1.8rem,4.4vw,2.8rem);color:var(--black);margin-top:12px">Serving [City] and surrounding areas</h2>
+      <p style="margin-top:14px;color:var(--gray);font-weight:600">In the area? You're on the route. Not sure? Call — if we can get a truck to it, we'll quote it.</p>
       <ul class="area-list">
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0116 0z"/><circle cx="12" cy="10" r="3"/></svg> [City / neighborhood]</li>
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0116 0z"/><circle cx="12" cy="10" r="3"/></svg> [City / neighborhood]</li>
@@ -762,15 +843,19 @@ button{font:inherit;cursor:pointer}
   <div class="wrap footer-grid">
     <div>
       <a class="brand" href="#top" aria-label="Back to top">
-        <svg viewBox="0 0 96 96" aria-hidden="true">
-          <path d="M48 4 88 16v34c0 22-16 36-40 42C24 86 8 72 8 50V16Z" fill="#1E6B34" stroke="#8FD14F" stroke-width="4" stroke-linejoin="round"/>
-          <text x="48" y="52" text-anchor="middle" font-family="Anton, Arial Black, sans-serif" font-size="38" fill="#fff">D</text>
-          <path d="M40 24c0-6 2-11 2-11s3 4 3 10M47 23c1-7 5-12 5-12s2 6 0 12M55 24c2-5 6-8 6-8s0 5-3 9" fill="none" stroke="#8FD14F" stroke-width="3.4" stroke-linecap="round"/>
-          <g fill="#fff"><path d="M28 62h22v9H28zM50 64h9l5 5v2h-14z"/><circle cx="35" cy="73" r="3.6" fill="#0C2E17" stroke="#fff" stroke-width="2"/><circle cx="56" cy="73" r="3.6" fill="#0C2E17" stroke="#fff" stroke-width="2"/></g>
+        <svg class="logo-badge" viewBox="0 0 96 96" aria-hidden="true">
+          <rect x="4" y="4" width="88" height="88" rx="22" fill="#101114"/>
+          <rect x="4" y="4" width="88" height="88" rx="22" fill="none" stroke="#FF7A1A" stroke-width="4"/>
+          <text x="48" y="55" text-anchor="middle" font-family="'Archivo Black','Arial Black',sans-serif" font-size="28" fill="#FFFFFF">DLS</text>
+          <path d="M12 71 C 32 80, 60 80, 85 63" stroke="#FF7A1A" stroke-width="7" fill="none" stroke-linecap="round"/>
+          <g stroke="#FF7A1A" stroke-width="3.4" stroke-linecap="round" fill="none">
+            <path d="M76 58c1-7 6-11 6-11s1 7-3 12"/>
+            <path d="M83 60c4-5 9-6 9-6s-2 7-7 9"/>
+          </g>
         </svg>
-        <span><span class="b-name">DAVIS</span><br><span class="b-sub">Lawn Service &amp; Hauling</span></span>
+        <span><span class="b-name">DLS</span><br><span class="b-sub">Davis Lawn Service &amp; Hauling</span></span>
       </a>
-      <p style="margin-top:16px;max-width:32ch;font-weight:500;font-size:.9rem">Lawn care and hauling for homes, businesses, and municipal properties.</p>
+      <p style="margin-top:16px;max-width:32ch;font-weight:500;font-size:.92rem">Lawn care and hauling for homes, businesses, and municipal properties.</p>
     </div>
     <div class="footer-col">
       <strong>Services</strong>
@@ -790,18 +875,18 @@ button{font:inherit;cursor:pointer}
       </a>
     </div>
   </div>
-  <div class="wrap footer-fine">&copy; 2026 Davis Lawn Service &amp; Hauling &middot; Free quotes &middot; Licensed &amp; insured <!-- TODO: confirm --></div>
+  <div class="wrap footer-fine">&copy; 2026 DLS — Davis Lawn Service &amp; Hauling &middot; Free quotes &middot; Licensed &amp; insured <!-- TODO: confirm --></div>
 </footer>
 
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  "name": "Davis Lawn Service & Hauling",
+  "name": "DLS - Davis Lawn Service & Hauling",
   "description": "Lawn care, yard cleanups, junk removal and hauling for residential, commercial, and municipal properties.",
   "telephone": "+1-555-012-3456",
   "areaServed": "TODO: city/county",
-  "url": "https://example.com/davis-lawn/",
+  "url": "https://example.com/",
   "sameAs": ["https://www.facebook.com/p/Davis-Lawn-Service-Hauling-100078407036199/"],
   "priceRange": "Free estimates"
 }
@@ -860,6 +945,20 @@ gsap.registerPlugin(ScrollTrigger);
   });
 })();
 
+/* ---------- logo animation: swoosh draws, blades pop, letters rise ---------- */
+if (!prefersReduced){
+  var swoosh = document.querySelector(".site-header .logo-swoosh");
+  if (swoosh && swoosh.getTotalLength){
+    var len = swoosh.getTotalLength();
+    swoosh.style.strokeDasharray = len;
+    swoosh.style.strokeDashoffset = len;
+    gsap.to(swoosh, { strokeDashoffset: 0, duration: 0.9, ease: "power2.out", delay: 0.3 });
+  }
+  gsap.from(".site-header .logo-dls", { y: 14, opacity: 0, duration: 0.7, ease: "back.out(1.8)", delay: 0.15 });
+  gsap.from(".site-header .logo-blades path", { scale: 0, transformOrigin: "bottom center", stagger: 0.12, duration: 0.5, ease: "back.out(3)", delay: 1.0 });
+  gsap.from(".site-header .logo-clips circle", { opacity: 0, y: -6, stagger: 0.1, duration: 0.4, delay: 1.1 });
+}
+
 /* ---------- motion accents (play-once on enter; zero pinning) ---------- */
 if (!prefersReduced){
   /* hero entrance */
@@ -867,10 +966,11 @@ if (!prefersReduced){
   gsap.from(".quote-card", { y: 44, opacity: 0, duration: 0.9, ease: "power3.out", delay: 0.35 });
   gsap.from("#hero-truck", { x: -420, duration: 1.6, ease: "power2.out", delay: 0.4 });
   gsap.to("#hero-truck", { y: "-=5", duration: 1.6, yoyo: true, repeat: -1, ease: "sine.inOut", delay: 2 });
+  gsap.to(".sun", { scale: 1.06, opacity: 0.9, duration: 4, yoyo: true, repeat: -1, ease: "sine.inOut" });
 
-  /* clouds drift forever */
-  document.querySelectorAll(".cloud").forEach(function(c, i){
-    gsap.to(c, { x: (i % 2 ? -1 : 1) * 60, duration: 22 + i * 7, yoyo: true, repeat: -1, ease: "sine.inOut" });
+  /* birds drift */
+  document.querySelectorAll(".bird").forEach(function(b, i){
+    gsap.to(b, { x: 120 + i * 60, y: -18, duration: 30 + i * 8, repeat: -1, yoyo: true, ease: "sine.inOut" });
   });
 
   /* marquee */
