@@ -1,0 +1,25 @@
+{
+  "name": "dlslawn",
+  "version": "1.0.0",
+  "description": "Conversion-first one-page site. All visuals are hand-built CSS/SVG (no AI images).",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/messylaunch/dlslawn.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/messylaunch/dlslawn/issues"
+  },
+  "homepage": "https://github.com/messylaunch/dlslawn#readme",
+  "devDependencies": {
+    "@higgsfield/cli": "^1.1.19",
+    "vercel": "^57.0.0"
+  }
+}
