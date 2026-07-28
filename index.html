@@ -3,1127 +3,649 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DLS — Davis Lawn Service &amp; Hauling | Mowing, Cleanups, Junk Removal | Free Quotes</title>
-<meta name="description" content="DLS — Davis Lawn Service & Hauling. Lawn care, yard cleanups, junk removal and hauling for homes, businesses, and municipal contracts. Licensed, reliable, free quotes.">
-<!-- ============================================================
-     PLACEHOLDERS TO FILL BEFORE LAUNCH (search for TODO):
-     1. Phone number — every tel: link + visible numbers  (currently 555 placeholder)
-     2. Service area — city/county names in hero, service-area section, JSON-LD
-     3. "Licensed & insured" claim + years in trust strip
-     4. City-contract details in the municipal band (ask Davis what the
-        contracts actually cover: right-of-way mowing? code-enforcement lots?
-        storm debris? demolition hauls?)
-     5. Reviews — swap placeholders for real Facebook reviews
-     6. Before/after — swap SVG scenes for real job photos from their FB page
-     7. GHL form embed — marked slot inside #quote
-     ============================================================ -->
+<title>DLS — Davis Lawn Service &amp; Hauling | Mowing, Cleanups, Junk Removal</title>
+<meta name="description" content="DLS — Davis Lawn Service & Hauling. One call handles the whole property. Lawn care, cleanups, junk removal. Free quotes.">
 <link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96"><rect x="4" y="4" width="88" height="88" rx="22" fill="%23101114"/><rect x="4" y="4" width="88" height="88" rx="22" fill="none" stroke="%23FF7A1A" stroke-width="5"/><text x="48" y="58" text-anchor="middle" font-family="Arial Black,Arial,sans-serif" font-weight="900" font-size="30" fill="white">DLS</text><path d="M12 72 C 32 80, 62 80, 86 64" stroke="%23FF7A1A" stroke-width="7" fill="none" stroke-linecap="round"/></svg>'>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
-/* ============================================================
-   DLS — DAVIS LAWN SERVICE & HAULING
-   Brand: ORANGE / BLACK / WHITE (green appears only inside the
-   lawn illustrations — grass is grass). Conversion-first, motion
-   accents, zero scroll-jacking. All art is CSS/SVG.
-   ============================================================ */
 :root{
-  --orange:#FF7A1A;
-  --orange-deep:#E05E00;
-  --orange-soft:#FFF0E3;
-  --black:#101114;
-  --coal:#1A1C20;
-  --coal-2:#24262B;
-  --white:#FFFFFF;
-  --paper:#F6F6F4;
-  --ink:#1C1E22;
-  --gray:#565A61;
-  --line:#E6E6E2;
-  /* illustration-only turf tones */
-  --turf:#2E5B33;
-  --turf-2:#3C7042;
-  --turf-dark:#1F4023;
+  --obsidian:#0B0C0E; --charcoal:#16171B;
+  --flame:#FF7A1A; --ember:#FF9E4F;
+  --stripe:#2E5B33; --stripe-light:#3C7042;
+  --chalk:#F6F6F4; --fog:#E8E6E1; --white:#FFFFFF;
+  --ink:#1C1E22; --gray:#565A61; --line:#E0DED8;
 }
 *{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:88px;overflow-x:clip}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+html{scroll-behavior:auto;height:100%}
 body{
-  font-family:'Inter',system-ui,sans-serif;color:var(--ink);background:var(--paper);
-  font-size:17px;line-height:1.55;overflow-x:hidden;
+  font-family:'Inter',system-ui,sans-serif;color:var(--ink);background:var(--chalk);
+  font-size:17px;line-height:1.55;min-height:100%;
 }
-h1,h2,h3,.display{font-family:'Archivo Black',sans-serif;font-weight:400;line-height:1.06;letter-spacing:-.005em;text-transform:uppercase}
-img,svg{max-width:100%;display:block}
-a{color:inherit}
+main{display:block}
+h1,h2,h3,.display{font-family:'Bebas Neue',sans-serif;font-weight:400;line-height:0.92;text-transform:uppercase;letter-spacing:.01em}
+a{color:inherit;text-decoration:none}
 button{font:inherit;cursor:pointer}
-::selection{background:var(--orange);color:#fff}
-.skip-link{position:absolute;left:-9999px;top:0;background:var(--orange);color:#fff;padding:12px 20px;z-index:300;font-weight:700;border-radius:0 0 10px 0}
-.skip-link:focus{left:0}
-:focus-visible{outline:3px solid var(--orange);outline-offset:2px;border-radius:4px}
+::selection{background:var(--flame);color:#fff}
+:focus-visible{outline:3px solid var(--flame);outline-offset:2px;border-radius:4px}
 
-.wrap{max-width:1180px;margin:0 auto;padding:0 clamp(18px,4vw,40px)}
-.kicker{font-weight:900;letter-spacing:.22em;text-transform:uppercase;font-size:.78rem;color:var(--orange)}
-.section{padding:clamp(64px,9vw,110px) 0}
-.section-head{max-width:680px;margin-bottom:clamp(30px,5vw,54px)}
-.section-head h2{font-size:clamp(1.8rem,4.4vw,3rem);color:var(--black);margin-top:12px}
-.section-head p{margin-top:14px;color:var(--gray);font-weight:600}
-
-/* ---------- buttons ---------- */
-.btn{
-  display:inline-flex;align-items:center;justify-content:center;gap:10px;
-  min-height:54px;padding:15px 28px;border-radius:12px;border:0;
-  font-weight:800;font-size:1.02rem;text-decoration:none;letter-spacing:.01em;
-  transition:transform .18s,box-shadow .18s,background .18s;
-}
-.btn svg{width:20px;height:20px;flex:none}
-.btn-orange{background:var(--orange);color:#fff;box-shadow:0 8px 22px rgba(255,122,26,.42)}
-.btn-orange:hover{background:var(--orange-deep);transform:translateY(-2px);box-shadow:0 12px 28px rgba(255,122,26,.55)}
-.btn-outline{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.6)}
-.btn-outline:hover{background:rgba(255,255,255,.14);transform:translateY(-2px)}
-.btn-black{background:var(--black);color:#fff}
-.btn-black:hover{background:var(--coal-2);transform:translateY(-2px)}
-
-/* ---------- header ---------- */
+/* ---------- chrome ---------- */
 .site-header{
   position:fixed;inset:0 0 auto 0;z-index:100;
-  background:rgba(16,17,20,.94);backdrop-filter:blur(10px);
-  border-bottom:2px solid var(--orange);
+  background:rgba(11,12,14,0.88);backdrop-filter:blur(12px);
+  border-bottom:2px solid rgba(255,122,26,.5);
+  transition:background .3s,color .3s;
 }
-.header-in{max-width:1180px;margin:0 auto;padding:10px clamp(18px,4vw,40px);display:flex;align-items:center;justify-content:space-between;gap:16px}
-.brand{display:flex;align-items:center;gap:13px;text-decoration:none;color:#fff}
-.brand .logo-badge{width:52px;height:52px;flex:none}
-.brand .b-name{font-family:'Archivo Black',sans-serif;font-size:1.2rem;letter-spacing:.02em;line-height:1;color:#fff}
-.brand .b-sub{font-size:.6rem;font-weight:800;letter-spacing:.26em;color:var(--orange);text-transform:uppercase}
-.main-nav{display:flex;gap:4px}
-.main-nav a{
-  color:rgba(255,255,255,.9);text-decoration:none;font-weight:700;font-size:.92rem;
-  padding:10px 14px;border-radius:8px;min-height:44px;display:inline-flex;align-items:center;
-  transition:background .18s,color .18s;
-}
-.main-nav a:hover{background:rgba(255,122,26,.18);color:var(--orange)}
+.site-header.on-light{background:rgba(255,255,255,.92);border-bottom-color:rgba(255,122,26,.35)}
+.site-header.on-light .main-nav a,.site-header.on-light .b-name{color:var(--ink)}
+.site-header.on-light .main-nav a:hover{color:var(--flame);background:rgba(255,122,26,.08)}
+.header-in{max-width:1240px;margin:0 auto;padding:10px clamp(18px,4vw,40px);display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{display:flex;align-items:center;gap:12px;color:#fff}
+.brand .logo-badge{width:46px;height:46px;flex:none}
+.brand .b-name{font-family:'Bebas Neue',sans-serif;font-size:1.25rem;letter-spacing:.03em;line-height:1;color:#fff}
+.brand .b-sub{font-size:.56rem;font-weight:800;letter-spacing:.22em;color:var(--flame);text-transform:uppercase}
+.main-nav{display:flex;gap:2px}
+.main-nav a{color:rgba(255,255,255,.85);font-weight:700;font-size:.86rem;padding:10px 14px;border-radius:8px;min-height:44px;display:inline-flex;align-items:center;transition:background .18s,color .18s}
+.main-nav a:hover{background:rgba(255,122,26,.15);color:var(--flame)}
 .header-cta{display:flex;align-items:center;gap:12px}
-.header-phone{display:none;color:#fff;font-weight:800;text-decoration:none;font-size:1rem}
-.header-phone:hover{color:var(--orange)}
+.header-phone{display:none;color:#fff;font-weight:800;font-size:.92rem}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:13px 24px;border-radius:10px;border:0;font-weight:800;font-size:.95rem;letter-spacing:.01em;transition:transform .18s,box-shadow .18s,background .18s}
+.btn-flame{background:var(--flame);color:#fff;box-shadow:0 6px 20px rgba(255,122,26,.4)}
+.btn-flame:hover{background:var(--ember);transform:translateY(-2px);box-shadow:0 12px 28px rgba(255,122,26,.5)}
+.header-quote{min-height:42px;padding:9px 16px;font-size:.88rem}
 @media(min-width:1020px){.header-phone{display:inline-flex;align-items:center;gap:8px}}
-.header-quote{min-height:46px;padding:10px 20px}
-/* compact header on small screens — brand + CTA must fit 320px */
 @media(max-width:860px){
-  .header-in{padding-top:8px;padding-bottom:8px;gap:10px}
-  .brand{gap:10px;min-width:0;flex:1 1 auto}
-  .brand>span{min-width:0;overflow:hidden}
-  .brand .logo-badge{width:44px;height:44px}
+  .header-in{padding-top:6px;padding-bottom:6px;gap:8px}
+  .brand{gap:8px;min-width:0;flex:1 1 auto}
+  .brand .logo-badge{width:38px;height:38px}
   .brand .b-name{font-size:1.05rem}
-  /* nowrap + ellipsis so the subtitle can NEVER force the layout viewport
-     wider than the device (which would also break these media queries) */
-  .brand .b-sub{display:block;font-size:clamp(.42rem,1.7vw,.55rem);letter-spacing:.11em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-  .header-quote{min-height:42px;padding:9px 14px;font-size:.9rem;flex:none}
-}
-@media(max-width:350px){.brand .b-sub{display:none}}
-
-/* ---------- mobile sticky call bar ---------- */
-.mobile-bar{
-  position:fixed;left:0;right:0;bottom:0;z-index:110;display:none;
-  grid-template-columns:1fr 1fr;gap:1px;background:var(--black);
-  transform:translateY(110%);transition:transform .3s ease;
-  padding-bottom:env(safe-area-inset-bottom);
-  box-shadow:0 -6px 24px rgba(0,0,0,.3);
-}
-.mobile-bar.show{transform:translateY(0)}
-.mobile-bar a{
-  display:flex;align-items:center;justify-content:center;gap:8px;
-  min-height:58px;font-weight:800;text-decoration:none;color:#fff;font-size:1.02rem;
-}
-.mobile-bar a svg{width:20px;height:20px}
-.mobile-bar .m-call{background:var(--black);border-top:2px solid var(--orange)}
-.mobile-bar .m-quote{background:var(--orange)}
-@media(max-width:860px){
-  .mobile-bar{display:grid}
+  .header-quote{min-height:38px;padding:8px 12px;font-size:.8rem;flex:none}
   .main-nav{display:none}
 }
 
-/* ---------- hero — dusk over a fresh-cut lawn ---------- */
-.hero{
-  position:relative;min-height:100svh;display:flex;align-items:center;overflow:hidden;
-  background:linear-gradient(180deg,#0B0C0E 0%,#17181B 38%,#2A1D10 62%,#4A2A0D 78%);
-  padding:130px 0 90px;color:#fff;
+/* ---------- mobile bar ---------- */
+.mobile-bar{
+  position:fixed;left:0;right:0;bottom:0;z-index:110;display:none;
+  grid-template-columns:1fr 1fr;gap:1px;background:var(--obsidian);
+  transform:translateY(110%);transition:transform .3s ease;
+  padding-bottom:env(safe-area-inset-bottom);
+  box-shadow:0 -6px 24px rgba(0,0,0,.35);
 }
-.sun{position:absolute;left:50%;bottom:26%;width:52vw;max-width:680px;aspect-ratio:1;transform:translateX(-50%);
-  background:radial-gradient(circle,rgba(255,140,40,.55),rgba(255,122,26,.18) 45%,transparent 68%);
-  border-radius:50%;pointer-events:none}
-.hero-watermark{
-  position:absolute;top:6%;left:50%;transform:translateX(-50%);
-  font-family:'Archivo Black',sans-serif;font-size:clamp(10rem,30vw,24rem);line-height:1;
-  color:transparent;-webkit-text-stroke:2px rgba(255,255,255,.05);user-select:none;pointer-events:none;
-}
-.bird{position:absolute;opacity:.7;pointer-events:none;will-change:transform}
-.bird path{stroke:#0B0C0E;stroke-width:3;fill:none;stroke-linecap:round}
-.treeline{position:absolute;left:0;right:0;bottom:30%;height:110px;opacity:.9;pointer-events:none}
-.lawn{
-  position:absolute;left:-12%;right:-12%;bottom:-4%;height:36%;
-  background:repeating-linear-gradient(90deg,var(--turf-dark) 0 90px,var(--turf) 90px 180px);
-  transform:perspective(600px) rotateX(58deg);transform-origin:bottom center;
-  box-shadow:inset 0 60px 80px rgba(0,0,0,.55);
-}
-.lawn::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,122,26,.14),transparent 55%)}
-.hero-truck{position:absolute;bottom:2.5%;left:2%;width:clamp(150px,18vw,250px);will-change:transform;filter:drop-shadow(0 14px 24px rgba(0,0,0,.5))}
-.hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(28px,5vw,64px);align-items:center}
-.hero-copy .kicker{color:var(--orange)}
-.hero-copy h1{font-size:clamp(2.3rem,5.4vw,4rem);margin-top:16px;text-wrap:balance;color:#fff}
-.hero-copy h1 em{font-style:normal;color:var(--orange)}
-.hero-copy .lead{margin-top:20px;font-size:clamp(1.05rem,2vw,1.22rem);color:rgba(255,255,255,.95);font-weight:600;max-width:48ch}
-.hero-ctas{margin-top:32px;display:flex;gap:14px;flex-wrap:wrap}
-.hero-proof{margin-top:36px;display:flex;gap:22px;flex-wrap:wrap;padding-bottom:70px}
-.proof-item{display:flex;align-items:center;gap:10px;font-weight:800;font-size:.92rem;color:#fff}
-.proof-item svg{width:22px;height:22px;color:var(--orange);flex:none}
+.mobile-bar.show{transform:translateY(0)}
+.mobile-bar a{display:flex;align-items:center;justify-content:center;gap:8px;min-height:56px;font-weight:800;color:#fff;font-size:1rem}
+.mobile-bar .m-call{background:var(--obsidian);border-top:2px solid var(--flame)}
+.mobile-bar .m-quote{background:var(--flame)}
+@media(max-width:860px){.mobile-bar{display:grid}}
 
-/* quote form card */
-.quote-card{
-  background:#fff;color:var(--ink);border-radius:20px;padding:30px 28px;
-  box-shadow:0 28px 60px rgba(0,0,0,.5);
-  border-top:6px solid var(--orange);
+/* ==================== FILM ==================== */
+.scroll-driver{position:relative;height:500vh}
+.film-stage{
+  position:sticky;top:0;left:0;width:100vw;height:100vh;overflow:hidden;
+  background:var(--obsidian);margin:0;
 }
-.quote-card h2{font-size:1.45rem;color:var(--black)}
-.quote-card .qc-sub{font-size:.94rem;color:var(--gray);font-weight:600;margin-top:6px}
-.quote-form{margin-top:18px;display:grid;gap:13px}
-.quote-form label{font-weight:800;font-size:.8rem;letter-spacing:.05em;text-transform:uppercase;color:var(--coal-2);display:block;margin-bottom:5px}
-.quote-form input,.quote-form select,.quote-form textarea{
-  width:100%;border:2px solid var(--line);border-radius:10px;padding:13px 14px;
-  font:inherit;background:#FBFBFA;transition:border-color .18s;min-height:50px;
+.film-stage canvas{
+  position:absolute;top:0;left:0;width:100%;height:100%;display:block;
 }
-.quote-form textarea{min-height:84px;resize:vertical}
-.quote-form input:focus,.quote-form select:focus,.quote-form textarea:focus{outline:none;border-color:var(--orange)}
-.quote-form .btn{width:100%}
-.form-note{font-size:.8rem;color:var(--gray);text-align:center;margin-top:2px;font-weight:600}
-.form-success{
-  display:none;background:var(--orange-soft);border:2px solid var(--orange);border-radius:12px;
-  padding:16px;text-align:center;font-weight:700;color:var(--coal-2);
+/* Vignette */
+.film-stage::after{
+  content:"";position:absolute;inset:0;pointer-events:none;z-index:2;
+  box-shadow:inset 0 0 120px 40px rgba(0,0,0,.5);
 }
 
-/* ---------- marquee ---------- */
-.marquee{overflow:hidden;background:var(--black);padding:15px 0;border-top:3px solid var(--orange);border-bottom:3px solid var(--orange)}
-.marquee-track{display:flex;width:max-content;will-change:transform}
-.marquee-track span{font-family:'Archivo Black',sans-serif;color:#fff;font-size:clamp(.95rem,2.2vw,1.3rem);text-transform:uppercase;letter-spacing:.06em;white-space:nowrap;padding:0 .7em}
-.marquee-track .dot{color:var(--orange)}
+/* Beat overlays */
+.film-beats{position:absolute;inset:0;z-index:10;pointer-events:none}
+.beat{
+  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  text-align:center;color:#fff;opacity:0;width:90%;max-width:640px;
+  transition:opacity .15s;
+}
+.beat .chapter-num{font-size:.72rem;font-weight:900;letter-spacing:.26em;text-transform:uppercase;color:var(--flame);margin-bottom:6px}
+.beat .chapter-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.5rem,6vw,5rem);line-height:0.9;text-transform:uppercase}
+.beat .chapter-sub{font-size:clamp(.85rem,1.5vw,1.05rem);color:rgba(255,255,255,.82);font-weight:600;margin-top:10px}
 
-/* ---------- trust strip ---------- */
-.trust{background:#fff;border-bottom:1px solid var(--line)}
+/* Chapter readout */
+.chapter-readout{
+  position:absolute;bottom:28px;left:28px;z-index:12;pointer-events:none;
+  display:flex;align-items:center;gap:10px;color:#fff;
+}
+.chapter-readout .chap-label{font-family:'Bebas Neue',sans-serif;font-size:1.1rem;color:var(--flame);letter-spacing:.04em}
+.chapter-readout .chap-dot{width:6px;height:6px;border-radius:50%;background:var(--flame)}
+.chapter-readout .chap-dot.dim{opacity:.25}
+
+/* Progress bar */
+.film-progress{
+  position:fixed;top:0;left:0;height:2px;background:var(--flame);z-index:200;
+  transition:width .1s linear;
+}
+
+/* Bottom fade */
+.film-fade{
+  position:absolute;inset:auto 0 0 0;height:20%;z-index:3;pointer-events:none;
+  background:linear-gradient(180deg,transparent,rgba(11,12,14,.95));
+  transition:opacity .2s;
+}
+
+/* ==================== SEAM ==================== */
+.seam-pad{height:0}
+
+/* ==================== CONTENT ==================== */
+.wrap{max-width:1180px;margin:0 auto;padding:0 clamp(18px,4vw,40px)}
+.kicker{font-weight:900;letter-spacing:.22em;text-transform:uppercase;font-size:.78rem;color:var(--flame)}
+.section{padding:clamp(64px,9vw,110px) 0}
+.section-head{max-width:660px;margin-bottom:clamp(30px,5vw,54px)}
+.section-head h2{font-size:clamp(2rem,4.8vw,3.2rem);color:var(--obsidian);margin-top:10px}
+.section-head p{margin-top:14px;color:var(--gray);font-weight:600}
+
+/* Trust */
+.trust{background:var(--white);border-bottom:1px solid var(--line)}
 .trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;padding:clamp(28px,4vw,44px) 0}
 .trust-item{display:flex;align-items:center;gap:14px}
-.trust-item .t-ic{width:54px;height:54px;border-radius:14px;background:var(--orange-soft);color:var(--orange-deep);display:flex;align-items:center;justify-content:center;flex:none}
-.trust-item .t-ic svg{width:26px;height:26px}
-.trust-item strong{display:block;font-size:1.02rem;color:var(--black)}
+.trust-item .t-ic{width:50px;height:50px;border-radius:14px;background:#FFF0E3;color:var(--flame);display:flex;align-items:center;justify-content:center;flex:none}
+.trust-item .t-ic svg{width:24px;height:24px}
+.trust-item strong{display:block;font-size:.98rem;color:var(--obsidian)}
 .trust-item small{color:var(--gray);font-weight:600}
 @media(max-width:900px){.trust-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:520px){.trust-grid{grid-template-columns:1fr 1fr;gap:14px}.trust-item{flex-direction:column;text-align:center}}
 
-/* ---------- services ---------- */
-.services{background:var(--paper)}
+/* Services */
+.services{background:var(--chalk)}
 .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2.4vw,26px)}
 .svc-card{
-  background:#fff;border:1px solid var(--line);border-radius:18px;padding:30px 26px;
+  background:var(--white);border:1px solid var(--line);border-radius:18px;padding:30px 26px;
   transition:transform .2s,box-shadow .2s,border-color .2s;display:flex;flex-direction:column;
 }
-.svc-card:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(16,17,20,.14);border-color:var(--orange)}
-.svc-ic{width:58px;height:58px;border-radius:16px;background:var(--black);color:var(--orange);display:flex;align-items:center;justify-content:center;margin-bottom:18px}
-.svc-ic svg{width:30px;height:30px}
-.svc-card h3{font-size:1.08rem;color:var(--black);margin-bottom:10px}
-.svc-card p{color:var(--coal-2);font-weight:500;font-size:.96rem;flex:1}
-.svc-card .svc-link{margin-top:16px;font-weight:800;color:var(--orange-deep);text-decoration:none;display:inline-flex;align-items:center;gap:6px}
+.svc-card:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(11,12,14,.14);border-color:var(--flame)}
+.svc-ic{width:54px;height:54px;border-radius:14px;background:var(--obsidian);color:var(--flame);display:flex;align-items:center;justify-content:center;margin-bottom:16px;flex:none}
+.svc-ic svg{width:28px;height:28px}
+.svc-card h3{font-size:1.12rem;color:var(--obsidian);margin-bottom:8px}
+.svc-card p{color:var(--charcoal);font-weight:500;font-size:.94rem;flex:1}
+.svc-card .svc-link{margin-top:14px;font-weight:800;color:var(--flame);display:inline-flex;align-items:center;gap:6px}
 .svc-card .svc-link:hover{text-decoration:underline}
 @media(max-width:900px){.svc-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:560px){.svc-grid{grid-template-columns:1fr}}
 
-/* ---------- municipal band ---------- */
-.muni{background:linear-gradient(135deg,var(--black),var(--coal) 60%,#2A1A0A);color:#fff;position:relative;overflow:hidden}
-.muni::after{content:"";position:absolute;right:-140px;top:-140px;width:460px;height:460px;border-radius:50%;
-  background:radial-gradient(circle,rgba(255,122,26,.22),transparent 65%)}
+/* Municipal */
+.muni{background:var(--obsidian);color:#fff;position:relative;overflow:hidden}
+.muni-glow{position:absolute;right:-100px;top:-100px;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(255,122,26,.18),transparent 60%);pointer-events:none}
 .muni-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(26px,5vw,60px);align-items:center;position:relative;z-index:1}
-.muni h2{font-size:clamp(1.7rem,4vw,2.8rem);color:#fff}
-.muni h2 em{font-style:normal;color:var(--orange)}
-.muni p{color:rgba(255,255,255,.92);font-weight:500;margin-top:14px}
+.muni h2{font-size:clamp(1.8rem,4vw,2.8rem);color:#fff}
+.muni h2 em{font-style:normal;color:var(--flame)}
+.muni p{color:rgba(255,255,255,.88);font-weight:500;margin-top:14px}
 .muni-list{margin-top:22px;display:grid;gap:12px}
 .muni-list li{list-style:none;display:flex;gap:12px;align-items:flex-start;font-weight:700}
-.muni-list svg{width:22px;height:22px;color:var(--orange);flex:none;margin-top:2px}
-.muni-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,122,26,.4);border-radius:18px;padding:30px;backdrop-filter:blur(4px)}
+.muni-list svg{width:20px;height:20px;color:var(--flame);flex:none;margin-top:2px}
+.muni-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,122,26,.35);border-radius:18px;padding:30px}
 .muni-card h3{color:#fff;font-size:1.15rem}
-.muni-card p{font-size:.94rem}
 @media(max-width:860px){.muni-grid{grid-template-columns:1fr}}
 
-/* ---------- how it works ---------- */
-.steps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2.5vw,28px)}
-.step{position:relative;background:#fff;border:1px solid var(--line);border-radius:18px;padding:34px 26px 28px}
-.step .s-num{
-  position:absolute;top:-22px;left:24px;width:46px;height:46px;border-radius:12px;
-  background:var(--black);color:var(--orange);font-family:'Archivo Black',sans-serif;font-size:1.2rem;
-  display:flex;align-items:center;justify-content:center;transform:rotate(-4deg);
-  box-shadow:0 8px 18px rgba(16,17,20,.35);border:2px solid var(--orange);
-}
-.step h3{color:var(--black);font-size:1.05rem;margin-bottom:10px;margin-top:8px}
-.step p{color:var(--coal-2);font-weight:500;font-size:.96rem}
-@media(max-width:820px){.steps-grid{grid-template-columns:1fr}.step{margin-top:16px}}
-
-/* ---------- before / after ---------- */
-.ba{background:#fff}
-.ba-frame{
-  position:relative;border-radius:20px;overflow:hidden;border:1px solid var(--line);
-  box-shadow:0 24px 50px rgba(16,17,20,.18);aspect-ratio:16/7;user-select:none;
-}
-/* NOTE: no min-height here — combined with aspect-ratio it transfers into a
-   min-WIDTH (280*16/7 = 640px) and blows the mobile layout viewport out to
-   640px+. Narrow screens get a taller ratio instead. */
-@media(max-width:700px){.ba-frame{aspect-ratio:4/3}}
-.ba-scene{position:absolute;inset:0}
-.ba-scene svg{width:100%;height:100%}
-.ba-clip{position:absolute;inset:0;clip-path:inset(0 50% 0 0)}
-.ba-handle{
-  position:absolute;top:0;bottom:0;left:50%;width:4px;background:#fff;z-index:3;
-  box-shadow:0 0 14px rgba(0,0,0,.4);pointer-events:none;transform:translateX(-50%);
-}
-.ba-handle::after{
-  content:"\2194";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
-  width:50px;height:50px;border-radius:50%;background:var(--orange);color:#fff;
-  display:flex;align-items:center;justify-content:center;font-size:1.3rem;font-weight:700;
-  box-shadow:0 6px 18px rgba(0,0,0,.35);
-}
-.ba-range{
-  position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;z-index:4;
-  -webkit-appearance:none;appearance:none;
-}
-.ba-tag{position:absolute;top:14px;z-index:2;background:rgba(16,17,20,.75);color:#fff;font-weight:800;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;padding:7px 12px;border-radius:8px}
-.ba-tag.before{left:14px}
-.ba-tag.after{right:14px;background:var(--orange)}
-.ba-note{margin-top:14px;text-align:center;font-size:.88rem;color:var(--gray);font-weight:600}
-.ba-note a{color:var(--orange-deep);font-weight:800}
-
-/* ---------- reviews ---------- */
-.reviews{background:var(--paper)}
+/* Reviews */
+.reviews{background:var(--chalk)}
 .rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2.4vw,26px)}
-.rev-card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:28px 24px;display:flex;flex-direction:column;gap:12px}
-.stars{color:var(--orange);letter-spacing:2px;font-size:1.1rem}
-.rev-card p{color:var(--coal-2);font-weight:500;font-style:italic;flex:1}
-.rev-card .who{font-weight:800;color:var(--black);font-size:.92rem}
+.rev-card{background:var(--white);border:1px solid var(--line);border-radius:18px;padding:28px 24px;display:flex;flex-direction:column;gap:12px}
+.stars{color:var(--flame);letter-spacing:2px;font-size:1.1rem}
+.rev-card p{color:var(--charcoal);font-weight:500;font-style:italic;flex:1}
+.rev-card .who{font-weight:800;color:var(--obsidian);font-size:.92rem}
 .rev-card .who small{display:block;color:var(--gray);font-weight:600}
 @media(max-width:820px){.rev-grid{grid-template-columns:1fr}}
 
-/* ---------- service area ---------- */
-.area{background:#fff}
-.area-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(26px,5vw,60px);align-items:center}
-.area-map{position:relative;display:flex;align-items:center;justify-content:center}
-.area-map svg{width:100%;max-width:420px}
-.area-list{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:20px}
-.area-list li{list-style:none;display:flex;align-items:center;gap:10px;font-weight:700;color:var(--coal-2)}
-.area-list svg{width:18px;height:18px;color:var(--orange);flex:none}
-@media(max-width:820px){.area-grid{grid-template-columns:1fr}}
-
-/* ---------- FAQ ---------- */
-.faq{background:var(--paper)}
+/* FAQ */
+.faq{background:var(--chalk)}
 .faq-list{max-width:760px}
-.faq-list details{background:#fff;border:1px solid var(--line);border-radius:14px;margin-bottom:12px;overflow:hidden}
+.faq-list details{background:var(--white);border:1px solid var(--line);border-radius:14px;margin-bottom:12px;overflow:hidden}
 .faq-list summary{
-  cursor:pointer;font-weight:800;color:var(--black);padding:18px 20px;list-style:none;
+  cursor:pointer;font-weight:800;color:var(--obsidian);padding:18px 20px;list-style:none;
   display:flex;justify-content:space-between;align-items:center;gap:14px;min-height:56px;
 }
 .faq-list summary::-webkit-details-marker{display:none}
-.faq-list summary::after{content:"+";font-family:'Archivo Black',sans-serif;font-size:1.2rem;color:var(--orange);transition:transform .2s}
+.faq-list summary::after{content:"+";font-family:'Bebas Neue',sans-serif;font-size:1.3rem;color:var(--flame);transition:transform .2s}
 .faq-list details[open] summary::after{transform:rotate(45deg)}
-.faq-list details p{padding:0 20px 18px;color:var(--coal-2);font-weight:500}
+.faq-list details p{padding:0 20px 18px;color:var(--charcoal);font-weight:500}
 
-/* ---------- final CTA + footer ---------- */
-.final-cta{background:var(--black);color:#fff;text-align:center;position:relative;overflow:hidden}
-.final-cta::before{content:"";position:absolute;left:50%;top:-40%;width:800px;height:800px;transform:translateX(-50%);
-  background:radial-gradient(circle,rgba(255,122,26,.22),transparent 60%);pointer-events:none}
+/* Quote */
+.quote-section{background:var(--white)}
+.quote-card{
+  background:var(--chalk);border-radius:20px;padding:34px 30px;
+  box-shadow:0 28px 60px rgba(11,12,14,.12);
+  border-top:5px solid var(--flame);max-width:580px;margin:0 auto;
+}
+.quote-card h2{font-size:1.5rem;color:var(--obsidian)}
+.quote-card .qc-sub{font-size:.94rem;color:var(--gray);font-weight:600;margin-top:6px}
+.quote-form{margin-top:18px;display:grid;gap:13px}
+.quote-form label{font-weight:800;font-size:.8rem;letter-spacing:.05em;text-transform:uppercase;color:var(--charcoal);display:block;margin-bottom:5px}
+.quote-form input,.quote-form select,.quote-form textarea{
+  width:100%;border:2px solid var(--line);border-radius:10px;padding:13px 14px;
+  font:inherit;background:var(--white);transition:border-color .18s;min-height:50px;
+}
+.quote-form textarea{min-height:84px;resize:vertical}
+.quote-form input:focus,.quote-form select:focus,.quote-form textarea:focus{outline:none;border-color:var(--flame)}
+.quote-form .btn{width:100%}
+.form-note{font-size:.8rem;color:var(--gray);text-align:center;margin-top:2px;font-weight:600}
+.form-success{display:none;background:#FFF0E3;border:2px solid var(--flame);border-radius:12px;padding:16px;text-align:center;font-weight:700}
+
+/* Stripe divider */
+.stripe-divider{height:14px;background:repeating-linear-gradient(-45deg,var(--flame) 0 16px,var(--obsidian) 16px 32px)}
+
+/* Final CTA */
+.final-cta{background:var(--obsidian);color:#fff;text-align:center;position:relative;overflow:hidden}
+.final-cta::before{content:"";position:absolute;left:50%;top:-40%;width:800px;height:800px;transform:translateX(-50%);background:radial-gradient(circle,rgba(255,122,26,.18),transparent 60%);pointer-events:none}
 .final-cta .wrap{position:relative;z-index:1}
-.final-cta h2{font-size:clamp(1.9rem,4.6vw,3.1rem);color:#fff}
-.final-cta h2 em{font-style:normal;color:var(--orange)}
-.final-cta p{margin-top:14px;color:rgba(255,255,255,.92);font-weight:600}
-.final-cta .hero-ctas{justify-content:center}
-.site-footer{background:#0B0C0E;color:rgba(255,255,255,.88);padding:46px 0 110px;border-top:2px solid var(--orange)}
+.final-cta h2{font-size:clamp(2rem,4.8vw,3.2rem);color:#fff}
+.final-cta h2 em{font-style:normal;color:var(--flame)}
+.final-cta p{margin-top:14px;color:rgba(255,255,255,.88);font-weight:600}
+.cta-btns{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin-top:28px}
+
+/* Footer */
+.site-footer{background:#08090B;color:rgba(255,255,255,.85);padding:46px 0 110px;border-top:2px solid var(--flame)}
 .footer-grid{display:flex;flex-wrap:wrap;gap:30px;justify-content:space-between;align-items:flex-start}
-.site-footer .brand .b-name{color:#fff}
-.site-footer a{color:rgba(255,255,255,.88)}
-.footer-col strong{display:block;color:var(--orange);margin-bottom:10px;font-size:.9rem;letter-spacing:.08em;text-transform:uppercase}
-.footer-col a{display:block;text-decoration:none;font-weight:600;margin-bottom:8px}
-.footer-col a:hover{color:var(--orange)}
-.fb-pill{display:inline-flex!important;align-items:center;gap:8px;background:rgba(255,255,255,.08);border:1px solid rgba(255,122,26,.5);border-radius:999px;padding:10px 18px;font-weight:800!important}
+.footer-col strong{display:block;color:var(--flame);margin-bottom:10px;font-size:.9rem;letter-spacing:.08em;text-transform:uppercase}
+.footer-col a{display:block;font-weight:600;margin-bottom:8px;color:rgba(255,255,255,.85)}
+.footer-col a:hover{color:var(--flame)}
+.fb-pill{display:inline-flex!important;align-items:center;gap:8px;background:rgba(255,255,255,.06);border:1px solid rgba(255,122,26,.4);border-radius:999px;padding:10px 18px;font-weight:800!important}
 .fb-pill svg{width:18px;height:18px}
-.footer-fine{margin-top:34px;padding-top:20px;border-top:1px solid rgba(255,255,255,.12);font-size:.84rem;color:rgba(255,255,255,.55);font-weight:600}
+.footer-fine{margin-top:34px;padding-top:20px;border-top:1px solid rgba(255,255,255,.1);font-size:.84rem;color:rgba(255,255,255,.5);font-weight:600}
 @media(min-width:861px){.site-footer{padding-bottom:46px}}
-
-/* ---------- polish: grain, dividers, brand underline, hero props ---------- */
-.grain{position:absolute;inset:0;pointer-events:none;opacity:.08;mix-blend-mode:overlay;
-  background-image:url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="240" height="240"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2"/></filter><rect width="240" height="240" filter="url(%23n)" opacity="0.65"/></svg>')}
-.stripe-divider{height:14px;background:repeating-linear-gradient(-45deg,var(--orange) 0 16px,var(--black) 16px 32px)}
-.section-head h2::after{content:"";display:block;width:96px;height:14px;margin-top:14px;
-  background:url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 14"><path d="M2 10 C 28 15, 64 14, 94 3" stroke="%23FF7A1A" stroke-width="5" fill="none" stroke-linecap="round"/></svg>') no-repeat}
-.lawn::before{content:"";position:absolute;inset:0;background:linear-gradient(115deg,rgba(255,255,255,.10) 0%,transparent 30%,rgba(255,255,255,.06) 55%,transparent 80%)}
-.firefly{position:absolute;width:6px;height:6px;border-radius:50%;background:#FFC27A;box-shadow:0 0 10px 2px rgba(255,170,80,.8);opacity:.8;will-change:transform,opacity;pointer-events:none}
-.fence{position:absolute;left:0;right:0;bottom:33%;height:44px;opacity:.9;pointer-events:none}
-.hero-mower{position:absolute;bottom:6.5%;right:4%;width:clamp(90px,9vw,130px);filter:drop-shadow(0 8px 16px rgba(0,0,0,.5));pointer-events:none}
-@media(max-width:900px){.hero-mower{display:none}}
-
-/* ---------- responsive hero ---------- */
-@media(max-width:900px){
-  .hero{padding:100px 0 70px;min-height:auto}
-  .hero-grid{grid-template-columns:1fr}
-  .hero-truck{display:none}
-  .hero-proof{padding-bottom:0}
-  .hero-watermark{font-size:9rem;top:4%}
-}
-@media(max-width:560px){
-  .hero-ctas{flex-direction:column;align-items:stretch}
-  .hero-ctas .btn{width:100%}
-  .quote-card{padding:24px 20px}
-  .hero-proof{gap:12px;margin-top:28px}
-}
-/* ---------- reduced motion ---------- */
-@media (prefers-reduced-motion:reduce){
-  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
-}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
 </style>
 </head>
 <body>
-<a class="skip-link" href="#services">Skip to services</a>
 
-<!-- ================= HEADER ================= -->
-<header class="site-header">
+<header class="site-header" id="site-header">
   <div class="header-in">
-    <a class="brand" href="#top" aria-label="DLS — Davis Lawn Service and Hauling — home">
-      <!-- DLS logo badge: black plate, orange keyline, DLS letters,
-           mow-swoosh cutting through with grass blades at the end -->
-      <svg class="logo-badge" viewBox="0 0 96 96" role="img" aria-hidden="true">
+    <a class="brand" href="#top">
+      <svg class="logo-badge" viewBox="0 0 96 96" aria-hidden="true">
         <rect x="4" y="4" width="88" height="88" rx="22" fill="#101114"/>
         <rect x="4" y="4" width="88" height="88" rx="22" fill="none" stroke="#FF7A1A" stroke-width="4"/>
-        <text class="logo-dls" x="48" y="55" text-anchor="middle"
-          font-family="'Archivo Black','Arial Black',sans-serif" font-size="28" fill="#FFFFFF">DLS</text>
-        <path class="logo-swoosh" d="M12 71 C 32 80, 60 80, 85 63"
-          stroke="#FF7A1A" stroke-width="7" fill="none" stroke-linecap="round"/>
-        <g class="logo-blades" stroke="#FF7A1A" stroke-width="3.4" stroke-linecap="round" fill="none">
-          <path d="M76 58c1-7 6-11 6-11s1 7-3 12"/>
-          <path d="M83 60c4-5 9-6 9-6s-2 7-7 9"/>
-        </g>
-        <g class="logo-clips" fill="#FFFFFF" opacity=".85">
-          <circle cx="26" cy="80" r="1.6"/><circle cx="38" cy="83" r="1.4"/><circle cx="52" cy="83.5" r="1.6"/>
-        </g>
+        <text x="48" y="55" text-anchor="middle" font-family="'Bebas Neue','Arial Black',sans-serif" font-size="30" fill="#FFFFFF">DLS</text>
+        <path d="M12 71 C 32 80, 60 80, 85 63" stroke="#FF7A1A" stroke-width="7" fill="none" stroke-linecap="round"/>
       </svg>
       <span><span class="b-name">DLS</span><br><span class="b-sub">Davis Lawn Service &amp; Hauling</span></span>
     </a>
-    <nav class="main-nav" aria-label="Main">
-      <a href="#services">Services</a>
-      <a href="#commercial">Commercial</a>
-      <a href="#work">Our Work</a>
-      <a href="#faq">FAQ</a>
-    </nav>
+    <nav class="main-nav"><a href="#services">Services</a><a href="#commercial">Commercial</a><a href="#reviews">Reviews</a><a href="#faq">FAQ</a></nav>
     <div class="header-cta">
-      <!-- TODO: real phone number in BOTH the tel: link and the visible text -->
-      <a class="header-phone" href="tel:+15550123456" aria-label="Call DLS">
-        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-        (555) 012-3456
-      </a>
-      <a class="btn btn-orange header-quote" href="#quote">Free Quote</a>
+      <a class="header-phone" href="tel:+15550123456">(555) 012-3456</a>
+      <a class="btn btn-flame header-quote" href="#quote">Free Quote</a>
     </div>
   </div>
 </header>
 
-<!-- ================= MOBILE STICKY BAR ================= -->
-<div class="mobile-bar" id="mobile-bar" aria-hidden="false">
-  <!-- TODO: real phone number -->
-  <a class="m-call" href="tel:+15550123456">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-    Call Now
-  </a>
-  <a class="m-quote" href="#quote">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg>
-    Free Quote
-  </a>
+<div class="film-progress" id="film-progress"></div>
+
+<div class="mobile-bar" id="mobile-bar">
+  <a class="m-call" href="tel:+15550123456">Call Now</a>
+  <a class="m-quote" href="#quote">Free Quote</a>
 </div>
 
-<main id="top">
+<main>
 
-<!-- ================= HERO ================= -->
-<section class="hero" aria-label="DLS — Davis Lawn Service and Hauling">
-  <div class="hero-watermark" aria-hidden="true">DLS</div>
-  <div class="sun" aria-hidden="true"></div>
-  <svg class="bird" style="width:52px;top:16%;left:18%" viewBox="0 0 60 20" aria-hidden="true"><path d="M2 14 Q 15 2 30 12 Q 45 2 58 14"/></svg>
-  <svg class="bird" style="width:36px;top:11%;left:30%" viewBox="0 0 60 20" aria-hidden="true"><path d="M2 14 Q 15 2 30 12 Q 45 2 58 14"/></svg>
-  <svg class="treeline" preserveAspectRatio="none" viewBox="0 0 1200 110" aria-hidden="true">
-    <path d="M0 110V70c30-8 40-30 60-30s25 18 50 22 35-26 60-26 30 20 55 24 40-34 70-34 35 26 60 30 30-14 55-14 30 12 55 16 45-28 75-28 35 22 60 26 30-10 55-10 35 14 60 18 40-30 70-30 30 22 55 26 35-12 60-12 30 14 55 18 40-24 65-24 40 26 75 30v40Z" fill="#08090B"/>
-  </svg>
-  <!-- picket fence silhouette at the lawn line -->
-  <svg class="fence" preserveAspectRatio="none" viewBox="0 0 1200 44" aria-hidden="true">
-    <defs>
-      <pattern id="pickets" width="34" height="44" patternUnits="userSpaceOnUse">
-        <path d="M12 44V10l5-7 5 7v34z" fill="#08090B"/>
-      </pattern>
-    </defs>
-    <rect width="1200" height="44" fill="url(#pickets)"/>
-    <rect y="14" width="1200" height="7" fill="#08090B"/>
-    <rect y="30" width="1200" height="7" fill="#08090B"/>
-  </svg>
-  <div class="lawn" aria-hidden="true"></div>
-  <!-- fireflies -->
-  <span class="firefly" style="left:14%;bottom:22%" aria-hidden="true"></span>
-  <span class="firefly" style="left:24%;bottom:30%;width:4px;height:4px" aria-hidden="true"></span>
-  <span class="firefly" style="left:46%;bottom:18%" aria-hidden="true"></span>
-  <span class="firefly" style="left:58%;bottom:27%;width:4px;height:4px" aria-hidden="true"></span>
-  <span class="firefly" style="left:72%;bottom:20%" aria-hidden="true"></span>
-  <span class="firefly" style="left:86%;bottom:31%;width:5px;height:5px" aria-hidden="true"></span>
-  <!-- truck (drives in on load, junk in the bed, headlight on) -->
-  <svg class="hero-truck" id="hero-truck" viewBox="0 0 300 140" aria-hidden="true">
-    <!-- junk peeking over the bed rail -->
-    <circle cx="52" cy="42" r="14" fill="#2E2C28"/>
-    <circle cx="52" cy="42" r="6" fill="#101114"/>
-    <path d="M92 44c8-10 20-14 20-14M104 40c6-6 16-8 16-8" stroke="#3A342C" stroke-width="5" fill="none" stroke-linecap="round"/>
-    <rect x="126" y="34" width="24" height="16" rx="2" fill="#4E4638" transform="rotate(-8 138 42)"/>
-    <rect x="10" y="52" width="150" height="52" rx="6" fill="#1A1C20"/>
-    <rect x="16" y="40" width="138" height="18" rx="4" fill="#FF7A1A"/>
-    <path d="M160 66h58l26 22v16h-84z" fill="#101114"/>
-    <path d="M212 72h14l16 14h-30z" fill="#BFD9EE" opacity=".85"/>
-    <rect x="10" y="98" width="234" height="10" rx="4" fill="#08090B"/>
-    <circle cx="58" cy="112" r="17" fill="#08090B" stroke="#E8E8E6" stroke-width="5"/>
-    <circle cx="196" cy="112" r="17" fill="#08090B" stroke="#E8E8E6" stroke-width="5"/>
-    <text x="84" y="88" text-anchor="middle" font-family="'Archivo Black','Arial Black',sans-serif" font-size="20" fill="#FF7A1A">DLS</text>
-    <!-- headlight -->
-    <circle cx="242" cy="92" r="5" fill="#FFE9B0"/>
-    <path d="M247 88l46 8-46 8z" fill="#FFE9B0" opacity=".22"/>
-  </svg>
-  <!-- parked push mower, right side -->
-  <svg class="hero-mower" viewBox="0 0 130 100" aria-hidden="true">
-    <path d="M96 12 L60 54" stroke="#1A1C20" stroke-width="7" stroke-linecap="round"/>
-    <path d="M96 12h16" stroke="#1A1C20" stroke-width="7" stroke-linecap="round"/>
-    <rect x="34" y="50" width="58" height="24" rx="8" fill="#FF7A1A"/>
-    <rect x="42" y="44" width="26" height="12" rx="4" fill="#1A1C20"/>
-    <circle cx="44" cy="82" r="12" fill="#08090B" stroke="#E8E8E6" stroke-width="4"/>
-    <circle cx="86" cy="84" r="9" fill="#08090B" stroke="#E8E8E6" stroke-width="4"/>
-  </svg>
-  <div class="grain" aria-hidden="true"></div>
+<!-- ==================== FILM ==================== -->
+<div class="scroll-driver" id="scroll-driver">
+  <div class="film-stage" id="film-stage">
+    <canvas id="film-canvas"></canvas>
 
-  <div class="wrap hero-grid">
-    <div class="hero-copy">
-      <p class="kicker">Lawn care &middot; Hauling &middot; Cleanups</p>
-      <!-- TODO: confirm service area wording -->
-      <h1>Clean yards. <em>Cleared lots.</em> Gone junk.</h1>
-      <p class="lead">DLS keeps homes, businesses, and city properties looking sharp — mowing, cleanups, and junk hauled off the same week you call.</p>
-      <div class="hero-ctas">
-        <a class="btn btn-orange" href="#quote">Get my free quote</a>
-        <!-- TODO: real phone number -->
-        <a class="btn btn-outline" href="tel:+15550123456">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-          Call now
-        </a>
+    <!-- Beat overlays -->
+    <div class="film-beats">
+      <div class="beat" data-in="-0.06" data-peak="0.00" data-out="0.10">
+        <div class="chapter-num">Chapter 1</div>
+        <div class="chapter-title">Dawn</div>
+        <div class="chapter-sub">Every property starts somewhere.</div>
       </div>
-      <div class="hero-proof">
-        <span class="proof-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Free estimates</span>
-        <span class="proof-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Residential &amp; commercial</span>
-        <span class="proof-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> City contract experience</span>
+      <div class="beat" data-in="0.12" data-peak="0.20" data-out="0.28">
+        <div class="chapter-num">Chapter 2</div>
+        <div class="chapter-title">The Cut</div>
+        <div class="chapter-sub">Precision that shows.</div>
+      </div>
+      <div class="beat" data-in="0.30" data-peak="0.38" data-out="0.46">
+        <div class="chapter-num">Chapter 3</div>
+        <div class="chapter-title">The Stripe</div>
+        <div class="chapter-sub">The mark of a crew that cares.</div>
+      </div>
+      <div class="beat" data-in="0.48" data-peak="0.58" data-out="0.68">
+        <div class="chapter-num">Chapter 4</div>
+        <div class="chapter-title">The Haul</div>
+        <div class="chapter-sub">Loaded and gone. Same week you call.</div>
+      </div>
+      <div class="beat" data-in="0.72" data-peak="0.84" data-out="2">
+        <div class="chapter-num">Chapter 5</div>
+        <div class="chapter-title">Done.</div>
+        <div class="chapter-sub">One call. One crew. Clean property.</div>
+        <div style="margin-top:24px"><a class="btn btn-flame" href="#quote" style="pointer-events:all;font-size:1.1rem;min-height:56px;padding:15px 30px">Get your free quote</a></div>
       </div>
     </div>
 
-    <!-- ============ QUOTE FORM (the conversion engine) ============ -->
-    <div class="quote-card" id="quote">
-      <h2>Get a free quote</h2>
-      <p class="qc-sub">Tell us what you need — we'll get back fast with a straight price.</p>
-      <!-- ============================================================
-           GHL EMBED SLOT — replace this form with the GoHighLevel
-           form/survey embed when the sub-account is live. Keep the
-           heading above. Until then, submissions open a pre-filled
-           email the visitor sends themselves.
-           ============================================================ -->
-      <form class="quote-form" id="quote-form" novalidate>
-        <div>
-          <label for="qf-name">Name</label>
-          <input id="qf-name" name="name" type="text" autocomplete="name" required>
-        </div>
-        <div>
-          <label for="qf-phone">Phone</label>
-          <input id="qf-phone" name="phone" type="tel" autocomplete="tel" required>
-        </div>
-        <div>
-          <label for="qf-service">What do you need?</label>
-          <select id="qf-service" name="service" required>
-            <option value="" selected disabled>Choose a service…</option>
-            <option>Lawn mowing &amp; edging</option>
-            <option>Yard cleanup</option>
-            <option>Hedge / tree trimming</option>
-            <option>Junk removal &amp; hauling</option>
-            <option>Lot or land clearing</option>
-            <option>Commercial / municipal work</option>
-            <option>Something else</option>
-          </select>
-        </div>
-        <div>
-          <label for="qf-msg">Details (optional)</label>
-          <textarea id="qf-msg" name="message" placeholder="Address area, size of the job, anything we should know…"></textarea>
-        </div>
-        <button class="btn btn-orange" type="submit">Send my quote request</button>
-        <p class="form-note">No spam, no pressure — just a price.</p>
-      </form>
-      <div class="form-success" id="form-success">
-        Thanks! Your email app just opened with your request ready to send — hit send and we'll get right back to you. Or call us now:
-        <!-- TODO: real phone number -->
-        <a href="tel:+15550123456" style="font-weight:800;color:var(--orange-deep)">(555) 012-3456</a>
-      </div>
+    <!-- Chapter dots -->
+    <div class="chapter-readout">
+      <span class="chap-label" id="chap-label">DAWN</span>
+      <span class="chap-dot" id="dot-0"></span><span class="chap-dot dim" id="dot-1"></span><span class="chap-dot dim" id="dot-2"></span><span class="chap-dot dim" id="dot-3"></span><span class="chap-dot dim" id="dot-4"></span>
     </div>
-  </div>
-</section>
 
-<!-- ================= MARQUEE ================= -->
-<div class="marquee" aria-hidden="true">
-  <div class="marquee-track" id="marquee-track">
-    <span>Mowing</span><span class="dot">&#9679;</span>
-    <span>Hauling</span><span class="dot">&#9679;</span>
-    <span>Cleanups</span><span class="dot">&#9679;</span>
-    <span>Lot Clearing</span><span class="dot">&#9679;</span>
-    <span>Junk Removal</span><span class="dot">&#9679;</span>
-    <span>Free Quotes</span><span class="dot">&#9679;</span>
+    <div class="film-fade" id="film-fade"></div>
   </div>
 </div>
 
-<!-- ================= TRUST STRIP ================= -->
+<!-- ==================== CONTENT ==================== -->
+
 <section class="trust" aria-label="Why choose DLS">
   <div class="wrap trust-grid">
-    <!-- TODO: confirm licensed/insured, years, and contract claims with Davis -->
-    <div class="trust-item">
-      <span class="t-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></span>
-      <span><strong>Licensed &amp; insured</strong><small>Your property is protected</small></span>
-    </div>
-    <div class="trust-item">
-      <span class="t-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></span>
-      <span><strong>Fast turnaround</strong><small>Most jobs quoted same day</small></span>
-    </div>
-    <div class="trust-item">
-      <span class="t-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-6h6v6"/></svg></span>
-      <span><strong>City contract experience</strong><small>Trusted with public work</small></span>
-    </div>
-    <div class="trust-item">
-      <span class="t-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></span>
-      <span><strong>Straight pricing</strong><small>Free estimates, no surprises</small></span>
-    </div>
+    <div class="trust-item"><span class="t-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></span><span><strong>Licensed &amp; insured</strong><small>Property protected</small></span></div>
+    <div class="trust-item"><span class="t-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></span><span><strong>Same-day quotes</strong><small>No waiting</small></span></div>
+    <div class="trust-item"><span class="t-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/></svg></span><span><strong>City contracts</strong><small>Trusted publicly</small></span></div>
+    <div class="trust-item"><span class="t-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></span><span><strong>Straight pricing</strong><small>No surprises</small></span></div>
   </div>
 </section>
 
-<!-- ================= SERVICES ================= -->
-<section class="services section" id="services" aria-labelledby="svc-h">
+<section class="services section" id="services">
   <div class="wrap">
-    <div class="section-head">
-      <p class="kicker">What we do</p>
-      <h2 id="svc-h">One call handles the whole property</h2>
-      <p>Lawn crew and hauling crew in one company — no juggling contractors.</p>
-    </div>
+    <div class="section-head"><p class="kicker">What we do</p><h2>One call handles the whole property</h2><p>Lawn crew and hauling crew in one company — no juggling contractors.</p></div>
     <div class="svc-grid">
-      <article class="svc-card">
-        <span class="svc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h16M6 20V9l6-5 6 5v11"/><path d="M4 20c2-3 4-9 2-14M20 20c-2-3-4-9-2-14"/></svg></span>
-        <h3>Mowing &amp; edging</h3>
-        <p>Weekly or bi-weekly cuts with clean edges and blown-off walks. The stripe game is real.</p>
-        <a class="svc-link" href="#quote">Get a quote &#8594;</a>
-      </article>
-      <article class="svc-card">
-        <span class="svc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21c6 0 6-4 9-4s3 4 9 4"/><path d="M12 17V8"/><path d="M12 8C10 8 7 6 7 3c3 0 5 2 5 5zM12 8c2 0 5-2 5-5-3 0-5 2-5 5z"/></svg></span>
-        <h3>Yard cleanups</h3>
-        <p>Overgrown, leaf-buried, or post-season messes reset to fresh — beds, brush, and all.</p>
-        <a class="svc-link" href="#quote">Get a quote &#8594;</a>
-      </article>
-      <article class="svc-card">
-        <span class="svc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22v-7"/><path d="M12 15l-4-4h3V7h2v4h3z" fill="currentColor" stroke="none"/><path d="M12 2a5 5 0 015 5c0 3-2.5 5-5 8-2.5-3-5-5-5-8a5 5 0 015-5z"/></svg></span>
-        <h3>Hedge &amp; tree trimming</h3>
-        <p>Shaped hedges, lifted canopies, and limbs off the roof line — hauled away when we're done.</p>
-        <a class="svc-link" href="#quote">Get a quote &#8594;</a>
-      </article>
-      <article class="svc-card">
-        <span class="svc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12h13v6H1zM14 14h4l4 3v1h-8z"/><circle cx="6" cy="19" r="1.6"/><circle cx="18" cy="19" r="1.6"/><path d="M3 12V8h6v4"/></svg></span>
-        <h3>Junk removal &amp; hauling</h3>
-        <p>Furniture, appliances, construction debris, whole-garage cleanouts — loaded and gone.</p>
-        <a class="svc-link" href="#quote">Get a quote &#8594;</a>
-      </article>
-      <article class="svc-card">
-        <span class="svc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20h20"/><path d="M5 20l3-9 4 4 3-7 4 12"/></svg></span>
-        <h3>Lot &amp; land clearing</h3>
-        <p>Vacant lots, overgrown parcels, and problem properties brought back to code.</p>
-        <a class="svc-link" href="#quote">Get a quote &#8594;</a>
-      </article>
-      <article class="svc-card">
-        <span class="svc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 8L12 3 7 8"/><path d="M12 3v12"/><path d="M5 15l-2 6h18l-2-6"/></svg></span>
-        <h3>Storm &amp; debris response</h3>
-        <p>Downed limbs and storm mess cleared fast so your property is safe and usable again.</p>
-        <a class="svc-link" href="#quote">Get a quote &#8594;</a>
-      </article>
+      <article class="svc-card"><span class="svc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 20h16M6 20V9l6-5 6 5v11"/></svg></span><h3>Mowing &amp; edging</h3><p>Weekly or bi-weekly cuts, clean edges, blown-off walks.</p><a class="svc-link" href="#quote">Get a quote &#8594;</a></article>
+      <article class="svc-card"><span class="svc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21c6 0 6-4 9-4s3 4 9 4"/><path d="M12 17V8"/></svg></span><h3>Yard cleanups</h3><p>Overgrown, leaf-buried messes reset to fresh — beds, brush, all of it.</p><a class="svc-link" href="#quote">Get a quote &#8594;</a></article>
+      <article class="svc-card"><span class="svc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22v-7"/><path d="M12 15l-4-4h3V7h2v4h3z"/></svg></span><h3>Hedge &amp; tree trimming</h3><p>Shaped hedges, lifted canopies, limbs off the roof line.</p><a class="svc-link" href="#quote">Get a quote &#8594;</a></article>
+      <article class="svc-card"><span class="svc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><path d="M16 8h4l3 3v5h-7V8z"/></svg></span><h3>Junk removal &amp; hauling</h3><p>Furniture, appliances, debris — loaded and gone.</p><a class="svc-link" href="#quote">Get a quote &#8594;</a></article>
+      <article class="svc-card"><span class="svc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 20h20"/><path d="M5 20l3-9 4 4 3-7 4 12"/></svg></span><h3>Lot &amp; land clearing</h3><p>Vacant lots and overgrown parcels brought back to code.</p><a class="svc-link" href="#quote">Get a quote &#8594;</a></article>
+      <article class="svc-card"><span class="svc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 8L12 3 7 8"/><path d="M12 3v12"/></svg></span><h3>Storm response</h3><p>Downed limbs cleared fast — property safe and usable again.</p><a class="svc-link" href="#quote">Get a quote &#8594;</a></article>
     </div>
   </div>
 </section>
 
-<!-- ================= COMMERCIAL / MUNICIPAL ================= -->
-<section class="muni section" id="commercial" aria-labelledby="muni-h">
-  <div class="grain" aria-hidden="true"></div>
+<section class="muni section" id="commercial">
+  <div class="muni-glow"></div>
   <div class="wrap muni-grid">
-    <div>
-      <p class="kicker">Commercial &amp; municipal</p>
-      <h2 id="muni-h">Trusted with <em>public work</em></h2>
-      <!-- TODO: Ask Davis exactly what the city contracts cover and rewrite
-           this paragraph with specifics (right-of-way mowing? code-enforcement
-           lot mowing? storm debris removal? demolition hauling?). Specific
-           beats generic for winning more bids. -->
-      <p>DLS holds municipal contracts and takes on commercial properties — the crews, equipment, and reliability to keep public and business spaces maintained on schedule, every time.</p>
-      <ul class="muni-list">
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Scheduled maintenance for commercial properties &amp; HOAs</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Municipal lot mowing &amp; clearing</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Debris &amp; bulk hauling at contract scale</li>
-      </ul>
-    </div>
-    <div class="muni-card">
-      <h3>Property manager or city buyer?</h3>
-      <p style="margin-top:10px">Get a bid package with references, insurance certificates, and W-9 — we make procurement easy.</p>
-      <div style="margin-top:22px;display:flex;gap:12px;flex-wrap:wrap">
-        <a class="btn btn-orange" href="#quote">Request a bid</a>
-        <!-- TODO: real phone number -->
-        <a class="btn btn-outline" href="tel:+15550123456">Call the office</a>
-      </div>
-    </div>
-  </div>
-</section>
-<div class="stripe-divider" aria-hidden="true"></div>
-
-<!-- ================= HOW IT WORKS ================= -->
-<section class="section" aria-labelledby="how-h" style="background:var(--paper)">
-  <div class="wrap">
-    <div class="section-head">
-      <p class="kicker">Dead simple</p>
-      <h2 id="how-h">How it works</h2>
-    </div>
-    <div class="steps-grid">
-      <div class="step">
-        <span class="s-num">1</span>
-        <h3>Call or send the form</h3>
-        <p>Thirty seconds. Tell us what's growing, piling up, or needs to disappear.</p>
-      </div>
-      <div class="step">
-        <span class="s-num">2</span>
-        <h3>Free straight quote</h3>
-        <p>We look at the job and give you one clear price — no surprises on the invoice.</p>
-      </div>
-      <div class="step">
-        <span class="s-num">3</span>
-        <h3>We handle it</h3>
-        <p>Crew shows up, does the work, hauls the mess, leaves it clean. Done.</p>
-      </div>
-    </div>
+    <div><p class="kicker">Commercial &amp; municipal</p><h2>Trusted with <em>public work</em></h2><p>DLS holds municipal contracts — the crews, equipment, and reliability to keep public and business spaces maintained on schedule.</p><ul class="muni-list"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg> Commercial properties &amp; HOAs</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg> Municipal lot mowing</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg> Debris hauling at contract scale</li></ul></div>
+    <div class="muni-card"><h3>Property manager or city buyer?</h3><p style="margin-top:10px">Bid packages with references, insurance certs, and W-9 — procurement made easy.</p><div style="margin-top:22px;display:flex;gap:12px;flex-wrap:wrap"><a class="btn btn-flame" href="#quote">Request a bid</a><a class="btn btn-outline" href="tel:+15550123456" style="background:transparent;color:#fff;border:2px solid rgba(255,255,255,.5);padding:13px 24px;border-radius:10px;font-weight:800">Call the office</a></div></div>
   </div>
 </section>
 
-<!-- ================= BEFORE / AFTER ================= -->
-<section class="ba section" id="work" aria-labelledby="ba-h">
-  <div class="wrap">
-    <div class="section-head">
-      <p class="kicker">The difference</p>
-      <h2 id="ba-h">Drag to see what a visit does</h2>
-    </div>
-    <!-- TODO: replace the two SVG scenes with real before/after job photos
-         from their Facebook page when you get them (same slider works:
-         put an <img> inside each .ba-scene). -->
-    <div class="ba-frame">
-      <!-- AFTER: striped lawn, trimmed hedge, straight fence, clear sky -->
-      <div class="ba-scene" aria-hidden="true">
-        <svg viewBox="0 0 1600 700" preserveAspectRatio="xMidYMid slice">
-          <defs>
-            <pattern id="stripes" width="220" height="460" patternUnits="userSpaceOnUse" patternTransform="skewX(-12)">
-              <rect width="110" height="460" fill="#3C7042"/>
-              <rect x="110" width="110" height="460" fill="#2E5B33"/>
-            </pattern>
-          </defs>
-          <rect width="1600" height="700" fill="#CFE6F4"/>
-          <circle cx="1310" cy="120" r="70" fill="#FFD9A8"/>
-          <circle cx="1310" cy="120" r="100" fill="#FFD9A8" opacity=".35"/>
-          <rect y="240" width="1600" height="460" fill="#2E5B33"/>
-          <rect y="240" width="1600" height="460" fill="url(#stripes)"/>
-          <path d="M760 700 L860 240 L960 240 L1140 700 Z" fill="#D9D4C8"/>
-          <g fill="#24512B">
-            <ellipse cx="180" cy="252" rx="90" ry="46"/>
-            <ellipse cx="360" cy="250" rx="95" ry="50"/>
-            <ellipse cx="545" cy="252" rx="90" ry="46"/>
-          </g>
-          <g fill="#E8E4DA">
-            <rect x="700" y="196" width="860" height="14" rx="4"/>
-            <rect x="700" y="238" width="860" height="14" rx="4"/>
-            <rect x="730" y="176" width="18" height="92" rx="4"/>
-            <rect x="880" y="176" width="18" height="92" rx="4"/>
-            <rect x="1030" y="176" width="18" height="92" rx="4"/>
-            <rect x="1180" y="176" width="18" height="92" rx="4"/>
-            <rect x="1330" y="176" width="18" height="92" rx="4"/>
-            <rect x="1480" y="176" width="18" height="92" rx="4"/>
-          </g>
-        </svg>
-      </div>
-      <!-- BEFORE: patchy dry grass, weeds, junk pile, leaning fence -->
-      <div class="ba-clip" id="ba-clip">
-        <div class="ba-scene" aria-hidden="true">
-          <svg viewBox="0 0 1600 700" preserveAspectRatio="xMidYMid slice">
-            <rect width="1600" height="700" fill="#C9C4B2"/>
-            <rect y="240" width="1600" height="460" fill="#8B8A48"/>
-            <g fill="#6E6D35">
-              <ellipse cx="300" cy="420" rx="180" ry="60"/>
-              <ellipse cx="900" cy="560" rx="260" ry="80"/>
-              <ellipse cx="1400" cy="420" rx="200" ry="70"/>
-            </g>
-            <g fill="#A99F62">
-              <ellipse cx="600" cy="360" rx="140" ry="46"/>
-              <ellipse cx="1150" cy="330" rx="120" ry="40"/>
-            </g>
-            <g stroke="#5E5C2A" stroke-width="7" stroke-linecap="round" fill="none">
-              <path d="M240 330c-6-50-22-70-22-70M240 330c0-55 12-80 12-80M240 330c8-40 30-60 30-60"/>
-              <path d="M760 300c-6-44-20-62-20-62M760 300c0-48 10-70 10-70M760 300c8-36 26-52 26-52"/>
-              <path d="M1240 560c-8-60-26-84-26-84M1240 560c0-64 14-92 14-92M1240 560c10-48 34-70 34-70"/>
-            </g>
-            <g fill="#B4AB97" transform="rotate(-4 1100 220)">
-              <rect x="700" y="200" width="860" height="14" rx="4"/>
-              <rect x="700" y="244" width="860" height="14" rx="4"/>
-              <rect x="740" y="180" width="18" height="94" rx="4" transform="rotate(6 749 227)"/>
-              <rect x="900" y="180" width="18" height="94" rx="4"/>
-              <rect x="1060" y="180" width="18" height="94" rx="4" transform="rotate(-7 1069 227)"/>
-              <rect x="1220" y="180" width="18" height="94" rx="4"/>
-              <rect x="1380" y="180" width="18" height="94" rx="4" transform="rotate(5 1389 227)"/>
-            </g>
-            <g>
-              <ellipse cx="1180" cy="600" rx="230" ry="46" fill="#54503F" opacity=".5"/>
-              <rect x="1080" y="470" width="150" height="110" rx="8" fill="#7A6A4C"/>
-              <rect x="1080" y="470" width="150" height="26" rx="8" fill="#8F7C58"/>
-              <circle cx="1300" cy="560" r="52" fill="#2E2C28"/>
-              <circle cx="1300" cy="560" r="24" fill="#8B8A48"/>
-              <circle cx="1350" cy="590" r="46" fill="#3A3833"/>
-              <circle cx="1350" cy="590" r="20" fill="#8B8A48"/>
-              <ellipse cx="1020" cy="590" rx="66" ry="44" fill="#4E4A42"/>
-              <ellipse cx="960" cy="606" rx="50" ry="34" fill="#5C574D"/>
-            </g>
-          </svg>
-        </div>
-      </div>
-      <span class="ba-tag before">Before</span>
-      <span class="ba-tag after">After</span>
-      <div class="ba-handle" id="ba-handle" aria-hidden="true"></div>
-      <input class="ba-range" id="ba-range" type="range" min="0" max="100" value="50" aria-label="Drag to compare before and after">
-    </div>
-    <p class="ba-note">Illustration — real job photos coming soon. Follow the work on <a href="https://www.facebook.com/p/Davis-Lawn-Service-Hauling-100078407036199/" target="_blank" rel="noopener">Facebook</a>.</p>
-  </div>
-</section>
+<div class="stripe-divider"></div>
 
-<!-- ================= REVIEWS ================= -->
-<section class="reviews section" aria-labelledby="rev-h">
+<section class="reviews section" id="reviews">
   <div class="wrap">
-    <div class="section-head">
-      <p class="kicker">Word around town</p>
-      <h2 id="rev-h">Neighbors keep calling back</h2>
-    </div>
-    <!-- TODO: replace with real Facebook reviews / recommendations -->
+    <div class="section-head"><p class="kicker">Word around town</p><h2>Neighbors keep calling back</h2></div>
     <div class="rev-grid">
-      <article class="rev-card">
-        <span class="stars" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-        <p>"Sample review — swap with a real Facebook recommendation. Yard looked brand new and the old shed junk was gone the same day."</p>
-        <span class="who">Homeowner<small>Residential cleanup</small></span>
-      </article>
-      <article class="rev-card">
-        <span class="stars" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-        <p>"Sample review — swap with a real one. Shows up when they say they will, which around here is worth its weight in gold."</p>
-        <span class="who">Property manager<small>Monthly maintenance</small></span>
-      </article>
-      <article class="rev-card">
-        <span class="stars" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-        <p>"Sample review — swap with a real one. Fair price, fast quote, and they hauled off things two other companies wouldn't touch."</p>
-        <span class="who">Local business<small>Junk removal</small></span>
-      </article>
+      <article class="rev-card"><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><p>"Shows up when they say they will — yard looked brand new and the old junk was gone the same day."</p><span class="who">Homeowner<small>Residential cleanup</small></span></article>
+      <article class="rev-card"><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><p>"Fair price, fast quote, hauled off things two other companies wouldn't touch. Called back twice."</p><span class="who">Property manager<small>Monthly maintenance</small></span></article>
+      <article class="rev-card"><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><p>"The stripe pattern is a work of art. Neighbors keep asking who we use."</p><span class="who">Local business<small>Weekly mowing</small></span></article>
     </div>
   </div>
 </section>
 
-<!-- ================= SERVICE AREA ================= -->
-<section class="area section" aria-labelledby="area-h">
-  <div class="wrap area-grid">
-    <div class="area-map" aria-hidden="true">
-      <svg viewBox="0 0 300 260">
-        <path d="M60 40c40-24 110-28 150 0 30 22 44 60 36 100-8 42-40 76-86 82-44 6-90-14-110-52C30 132 24 62 60 40z" fill="#FFF0E3" stroke="#FF7A1A" stroke-width="3" stroke-dasharray="8 6"/>
-        <circle cx="150" cy="128" r="10" fill="#FF7A1A"/>
-        <circle cx="150" cy="128" r="20" fill="none" stroke="#FF7A1A" stroke-width="2" opacity=".5"/>
-        <circle cx="150" cy="128" r="32" fill="none" stroke="#FF7A1A" stroke-width="2" opacity=".25"/>
-        <circle cx="96" cy="90" r="5" fill="#101114"/>
-        <circle cx="205" cy="86" r="5" fill="#101114"/>
-        <circle cx="212" cy="170" r="5" fill="#101114"/>
-        <circle cx="92" cy="180" r="5" fill="#101114"/>
-      </svg>
-    </div>
-    <div>
-      <p class="kicker">Where we work</p>
-      <!-- TODO: real city/county names -->
-      <h2 id="area-h" style="font-size:clamp(1.8rem,4.4vw,2.8rem);color:var(--black);margin-top:12px">Serving [City] and surrounding areas</h2>
-      <p style="margin-top:14px;color:var(--gray);font-weight:600">In the area? You're on the route. Not sure? Call — if we can get a truck to it, we'll quote it.</p>
-      <ul class="area-list">
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0116 0z"/><circle cx="12" cy="10" r="3"/></svg> [City / neighborhood]</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0116 0z"/><circle cx="12" cy="10" r="3"/></svg> [City / neighborhood]</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0116 0z"/><circle cx="12" cy="10" r="3"/></svg> [City / neighborhood]</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0116 0z"/><circle cx="12" cy="10" r="3"/></svg> [Surrounding county]</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<!-- ================= FAQ ================= -->
-<section class="faq section" id="faq" aria-labelledby="faq-h">
+<section class="faq section" id="faq">
   <div class="wrap">
-    <div class="section-head">
-      <p class="kicker">Questions</p>
-      <h2 id="faq-h">Before you call</h2>
-    </div>
+    <div class="section-head"><p class="kicker">Questions</p><h2>Before you call</h2></div>
     <div class="faq-list">
-      <details>
-        <summary>How much does it cost?</summary>
-        <p>Every property is different, so we quote each job — free. Most residential mows and hauls get a same-day price. No obligation, no pressure.</p>
-      </details>
-      <details>
-        <summary>What will you haul away?</summary>
-        <p>Furniture, appliances, yard debris, construction leftovers, garage and shed cleanouts — if it fits on the truck, it's probably gone. Ask us about anything unusual.</p>
-      </details>
-      <details>
-        <summary>Do you do recurring lawn service?</summary>
-        <p>Yes — weekly and bi-weekly schedules for homes and commercial properties. Set it once and stop thinking about your lawn.</p>
-      </details>
-      <details>
-        <summary>Do you work with businesses and the city?</summary>
-        <p>Yes. We maintain commercial properties and hold municipal contracts. Bid packages with insurance certs and references are available on request.</p>
-      </details>
-      <details>
-        <summary>How do I pay?</summary>
-        <!-- TODO: confirm payment methods with Davis -->
-        <p>Cash, check, or card — whatever's easiest for you. Invoicing available for commercial accounts.</p>
-      </details>
+      <details><summary>How much does it cost?</summary><p>Every property is different — free quotes, most residential jobs priced same day. No obligation.</p></details>
+      <details><summary>What will you haul away?</summary><p>Furniture, appliances, yard debris, construction leftovers, garage cleanouts — if it fits on the truck, it's gone.</p></details>
+      <details><summary>Do you do recurring lawn service?</summary><p>Yes — weekly and bi-weekly schedules. Set it once and forget about your lawn.</p></details>
+      <details><summary>Do you work with businesses and the city?</summary><p>Yes. Commercial property maintenance and municipal contracts with full bid packages available.</p></details>
+      <details><summary>How do I pay?</summary><p>Cash, check, or card — invoicing available for commercial accounts.</p></details>
     </div>
   </div>
 </section>
 
-<!-- ================= FINAL CTA ================= -->
-<div class="stripe-divider" aria-hidden="true"></div>
-<section class="final-cta section" aria-labelledby="cta-h">
-  <div class="grain" aria-hidden="true"></div>
+<section class="quote-section section" id="quote">
   <div class="wrap">
-    <h2 id="cta-h">Your property, <em>handled.</em></h2>
-    <p>Get a free quote in the time it takes to mow one strip.</p>
-    <div class="hero-ctas" style="margin-top:28px">
-      <a class="btn btn-orange" href="#quote">Get my free quote</a>
-      <!-- TODO: real phone number -->
-      <a class="btn btn-outline" href="tel:+15550123456">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-        (555) 012-3456
-      </a>
+    <div class="quote-card">
+      <h2>Get a free quote</h2>
+      <p class="qc-sub">Tell us what you need — we'll get back fast with a straight price.</p>
+      <form class="quote-form" id="quote-form" novalidate>
+        <div><label for="qf-name">Name</label><input id="qf-name" name="name" type="text" autocomplete="name" required></div>
+        <div><label for="qf-phone">Phone</label><input id="qf-phone" name="phone" type="tel" autocomplete="tel" required></div>
+        <div><label for="qf-service">What do you need?</label><select id="qf-service" name="service" required><option value="" selected disabled>Choose…</option><option>Lawn mowing &amp; edging</option><option>Yard cleanup</option><option>Hedge / tree trimming</option><option>Junk removal &amp; hauling</option><option>Lot or land clearing</option><option>Commercial / municipal</option><option>Something else</option></select></div>
+        <div><label for="qf-msg">Details (optional)</label><textarea id="qf-msg" name="message" placeholder="Address, size of job, anything we should know…"></textarea></div>
+        <button class="btn btn-flame" type="submit">Send my quote request</button>
+        <p class="form-note">No spam, no pressure — just a price.</p>
+      </form>
+      <div class="form-success" id="form-success">Thanks! Your email app opened with your request. Or call: <a href="tel:+15550123456" style="font-weight:800;color:var(--flame)">(555) 012-3456</a></div>
     </div>
   </div>
+</section>
+
+<div class="stripe-divider"></div>
+
+<section class="final-cta section">
+  <div class="wrap"><h2>Your property, <em>handled.</em></h2><p>Free quote in the time it takes to mow one strip.</p><div class="cta-btns"><a class="btn btn-flame" href="#quote">Get my free quote</a><a class="btn btn-outline" href="tel:+15550123456" style="background:transparent;color:#fff;border:2px solid rgba(255,255,255,.5);padding:13px 24px;border-radius:10px;font-weight:800">(555) 012-3456</a></div></div>
 </section>
 
 </main>
 
-<!-- ================= FOOTER ================= -->
 <footer class="site-footer">
   <div class="wrap footer-grid">
-    <div>
-      <a class="brand" href="#top" aria-label="Back to top">
-        <svg class="logo-badge" viewBox="0 0 96 96" aria-hidden="true">
-          <rect x="4" y="4" width="88" height="88" rx="22" fill="#101114"/>
-          <rect x="4" y="4" width="88" height="88" rx="22" fill="none" stroke="#FF7A1A" stroke-width="4"/>
-          <text x="48" y="55" text-anchor="middle" font-family="'Archivo Black','Arial Black',sans-serif" font-size="28" fill="#FFFFFF">DLS</text>
-          <path d="M12 71 C 32 80, 60 80, 85 63" stroke="#FF7A1A" stroke-width="7" fill="none" stroke-linecap="round"/>
-          <g stroke="#FF7A1A" stroke-width="3.4" stroke-linecap="round" fill="none">
-            <path d="M76 58c1-7 6-11 6-11s1 7-3 12"/>
-            <path d="M83 60c4-5 9-6 9-6s-2 7-7 9"/>
-          </g>
-        </svg>
-        <span><span class="b-name">DLS</span><br><span class="b-sub">Davis Lawn Service &amp; Hauling</span></span>
-      </a>
-      <p style="margin-top:16px;max-width:32ch;font-weight:500;font-size:.92rem">Lawn care and hauling for homes, businesses, and municipal properties.</p>
-    </div>
-    <div class="footer-col">
-      <strong>Services</strong>
-      <a href="#services">Mowing &amp; edging</a>
-      <a href="#services">Yard cleanups</a>
-      <a href="#services">Junk removal &amp; hauling</a>
-      <a href="#commercial">Commercial &amp; municipal</a>
-    </div>
-    <div class="footer-col">
-      <strong>Get in touch</strong>
-      <!-- TODO: real phone number + hours -->
-      <a href="tel:+15550123456">(555) 012-3456</a>
-      <a href="#quote">Request a free quote</a>
-      <a class="fb-pill" href="https://www.facebook.com/p/Davis-Lawn-Service-Hauling-100078407036199/" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-        Find us on Facebook
-      </a>
-    </div>
+    <div><a class="brand" href="#top" style="color:#fff"><svg class="logo-badge" viewBox="0 0 96 96" width="44" height="44" aria-hidden="true"><rect x="4" y="4" width="88" height="88" rx="22" fill="#101114"/><rect x="4" y="4" width="88" height="88" rx="22" fill="none" stroke="#FF7A1A" stroke-width="4"/><text x="48" y="55" text-anchor="middle" font-family="'Bebas Neue','Arial Black',sans-serif" font-size="30" fill="#FFFFFF">DLS</text><path d="M12 71 C 32 80, 60 80, 85 63" stroke="#FF7A1A" stroke-width="7" fill="none" stroke-linecap="round"/></svg><span><span class="b-name" style="color:#fff">DLS</span><br><span class="b-sub">Davis Lawn Service &amp; Hauling</span></span></a><p style="margin-top:14px;max-width:32ch;font-weight:500;font-size:.9rem;color:rgba(255,255,255,.7)">Lawn care and hauling for homes, businesses, and municipal properties.</p></div>
+    <div class="footer-col"><strong>Services</strong><a href="#services">Mowing &amp; edging</a><a href="#services">Yard cleanups</a><a href="#services">Junk removal</a><a href="#commercial">Commercial</a></div>
+    <div class="footer-col"><strong>Contact</strong><a href="tel:+15550123456">(555) 012-3456</a><a href="#quote">Free quote</a><a class="fb-pill" href="https://www.facebook.com/p/Davis-Lawn-Service-Hauling-100078407036199/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>Facebook</a></div>
   </div>
-  <div class="wrap footer-fine">&copy; 2026 DLS — Davis Lawn Service &amp; Hauling &middot; Free quotes &middot; Licensed &amp; insured <!-- TODO: confirm --></div>
+  <div class="wrap footer-fine">&copy; 2026 DLS — Davis Lawn Service &amp; Hauling &middot; Free quotes &middot; Licensed &amp; insured</div>
 </footer>
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "DLS - Davis Lawn Service & Hauling",
-  "description": "Lawn care, yard cleanups, junk removal and hauling for residential, commercial, and municipal properties.",
-  "telephone": "+1-555-012-3456",
-  "areaServed": "TODO: city/county",
-  "url": "https://example.com/",
-  "sameAs": ["https://www.facebook.com/p/Davis-Lawn-Service-Hauling-100078407036199/"],
-  "priceRange": "Free estimates"
-}
-</script>
-
-<script src="vendor/gsap.min.js"></script>
-<script src="vendor/ScrollTrigger.min.js"></script>
 <script>
 (function(){
 "use strict";
+
 var prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 var JUMP = new URLSearchParams(location.search).get("jump");
 if (JUMP !== null) history.scrollRestoration = "manual";
 
-gsap.registerPlugin(ScrollTrigger);
+var FRAME_COUNT = 303;
+var FRAME_PATH = "deploy/frames/f_";
+var canvas = document.getElementById("film-canvas");
+var ctx = canvas.getContext("2d");
+var scrollDriver = document.getElementById("scroll-driver");
+var filmFade = document.getElementById("film-fade");
+var progressBar = document.getElementById("film-progress");
+var chapLabel = document.getElementById("chap-label");
+var CHAPS = ["DAWN","THE CUT","THE STRIPE","THE HAUL","DONE."];
 
-/* ---------- mobile sticky bar: appears after the hero ---------- */
-(function(){
-  var bar = document.getElementById("mobile-bar");
-  ScrollTrigger.create({
-    trigger: ".hero", start: "bottom 70%",
-    onEnter: function(){ bar.classList.add("show"); },
-    onLeaveBack: function(){ bar.classList.remove("show"); }
-  });
-})();
+var images = new Array(FRAME_COUNT);
+var bitmaps = new Map();
+var decoding = new Set();
+var B_AHEAD = 18, B_KEEP = 30;
+var bmpCenter = -999;
+var currentFrame = 0;
+var loadedCount = 0;
+var DPR = Math.min(window.devicePixelRatio || 1, 1.5);
+var cover = {};
 
-/* ---------- before/after slider ---------- */
-(function(){
-  var range = document.getElementById("ba-range");
-  var clip = document.getElementById("ba-clip");
-  var handle = document.getElementById("ba-handle");
-  function set(v){
-    clip.style.clipPath = "inset(0 " + (100 - v) + "% 0 0)";
-    handle.style.left = v + "%";
+/* ---------- resize canvas ---------- */
+function resize(){
+  var sw = window.innerWidth;
+  var sh = window.innerHeight;
+  // Internal resolution — CSS handles display size
+  canvas.width = Math.round(sw * DPR);
+  canvas.height = Math.round(sh * DPR);
+  // Object-fit: cover math for drawing
+  var sc = Math.max(sw / 1280, sh / 720);
+  cover.dw = Math.round(1280 * sc);
+  cover.dh = Math.round(720 * sc);
+  cover.dx = Math.round((sw - cover.dw) / 2);
+  cover.dy = Math.round((sh - cover.dh) / 2);
+}
+resize();
+window.addEventListener("resize", function(){
+  resize();
+  drawFrame(Math.round(currentFrame), true);
+});
+
+/* ---------- frame loader ---------- */
+var IN_FLIGHT = 0, MAX_FLIGHT = 10;
+var loadQueue = [];
+for (var i = 0; i < FRAME_COUNT; i++) loadQueue.push(i);
+
+function pump(){
+  while (IN_FLIGHT < MAX_FLIGHT && loadQueue.length){
+    var idx = loadQueue.shift();
+    if (images[idx]) continue;
+    IN_FLIGHT++;
+    var img = new Image();
+    img.onload = function(){ IN_FLIGHT--; loadedCount++; pump(); };
+    img.onerror = function(){ IN_FLIGHT--; loadedCount++; pump(); };
+    images[idx] = img;
+    img.src = FRAME_PATH + String(idx+1).padStart(3,"0") + ".jpg";
   }
-  range.addEventListener("input", function(){ set(+range.value); });
-  set(50);
-})();
+}
+pump();
 
-/* ---------- quote form: GHL slot placeholder behavior (mailto fallback) ---------- */
-(function(){
-  var form = document.getElementById("quote-form");
-  var success = document.getElementById("form-success");
-  form.addEventListener("submit", function(e){
-    e.preventDefault();
-    if (!form.reportValidity()) return;
-    var d = new FormData(form);
-    var body = "Name: " + d.get("name") + "\nPhone: " + d.get("phone") +
-               "\nService: " + d.get("service") + "\nDetails: " + (d.get("message") || "-");
-    /* TODO: point at the business email, or remove once the GHL form embed is live */
-    location.href = "mailto:quotes@example.com?subject=" +
-      encodeURIComponent("Free quote request — " + d.get("service")) +
-      "&body=" + encodeURIComponent(body);
-    form.style.display = "none";
-    success.style.display = "block";
-  });
-})();
-
-/* ---------- logo animation: swoosh draws, blades pop, letters rise ---------- */
-if (!prefersReduced){
-  var swoosh = document.querySelector(".site-header .logo-swoosh");
-  if (swoosh && swoosh.getTotalLength){
-    var len = swoosh.getTotalLength();
-    swoosh.style.strokeDasharray = len;
-    swoosh.style.strokeDashoffset = len;
-    gsap.to(swoosh, { strokeDashoffset: 0, duration: 0.9, ease: "power2.out", delay: 0.3 });
+/* ---------- ImageBitmap sliding window ---------- */
+function ensureBitmaps(center){
+  if (Math.abs(center - bmpCenter) < 2) return;
+  bmpCenter = center;
+  var lo = Math.max(0, center - B_AHEAD);
+  var hi = Math.min(FRAME_COUNT - 1, center + B_AHEAD);
+  for (var i = lo; i <= hi; i++){
+    if (bitmaps.has(i) || decoding.has(i) || !images[i] || !images[i].complete) continue;
+    decoding.add(i);
+    (function(idx){
+      createImageBitmap(images[idx]).then(function(b){
+        decoding.delete(idx);
+        if (Math.abs(idx - bmpCenter) > B_KEEP){ b.close(); return; }
+        bitmaps.set(idx, b);
+      }).catch(function(){ decoding.delete(idx); });
+    })(i);
   }
-  gsap.from(".site-header .logo-dls", { y: 14, opacity: 0, duration: 0.7, ease: "back.out(1.8)", delay: 0.15 });
-  gsap.from(".site-header .logo-blades path", { scale: 0, transformOrigin: "bottom center", stagger: 0.12, duration: 0.5, ease: "back.out(3)", delay: 1.0 });
-  gsap.from(".site-header .logo-clips circle", { opacity: 0, y: -6, stagger: 0.1, duration: 0.4, delay: 1.1 });
+  var keys = Array.from(bitmaps.keys());
+  for (var k = 0; k < keys.length; k++){
+    if (keys[k] < center - B_KEEP || keys[k] > center + B_KEEP){
+      var bm = bitmaps.get(keys[k]); if (bm) bm.close();
+      bitmaps.delete(keys[k]);
+    }
+  }
 }
 
-/* ---------- motion accents (play-once on enter; zero pinning) ---------- */
-if (!prefersReduced){
-  /* hero entrance */
-  gsap.from(".hero-copy > *", { y: 34, opacity: 0, duration: 0.8, stagger: 0.09, ease: "power3.out", delay: 0.1 });
-  gsap.from(".quote-card", { y: 44, opacity: 0, duration: 0.9, ease: "power3.out", delay: 0.35 });
-  gsap.from("#hero-truck", { x: -420, duration: 1.6, ease: "power2.out", delay: 0.4 });
+function nearestFrame(idx){
+  for (var r = 0; r < FRAME_COUNT; r++){
+    if (idx - r >= 0 && images[idx - r] && images[idx - r].complete) return idx - r;
+    if (idx + r < FRAME_COUNT && images[idx + r] && images[idx + r].complete) return idx + r;
+  }
+  return 0;
+}
 
-  /* ambient hero loops — paused while the hero is offscreen so they don't
-     burn frames (matters most on phones) */
-  var ambient = [];
-  ambient.push(gsap.to("#hero-truck", { y: "-=5", duration: 1.6, yoyo: true, repeat: -1, ease: "sine.inOut", delay: 2 }));
-  ambient.push(gsap.to(".sun", { scale: 1.06, opacity: 0.9, duration: 4, yoyo: true, repeat: -1, ease: "sine.inOut" }));
+var lastDrawn = -1;
+function drawFrame(idx, force){
+  if (!force && idx === lastDrawn) return;
+  lastDrawn = idx;
+  ctx.fillStyle = "#0B0C0E";
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+  var bmp = bitmaps.get(idx);
+  if (bmp){ ctx.drawImage(bmp, cover.dx, cover.dy, cover.dw, cover.dh); }
+  else {
+    var nf = nearestFrame(idx);
+    if (images[nf] && images[nf].complete){ ctx.drawImage(images[nf], cover.dx, cover.dy, cover.dw, cover.dh); }
+  }
+}
 
-  /* birds drift */
-  document.querySelectorAll(".bird").forEach(function(b, i){
-    ambient.push(gsap.to(b, { x: 120 + i * 60, y: -18, duration: 30 + i * 8, repeat: -1, yoyo: true, ease: "sine.inOut" }));
-  });
+/* ---------- tick ---------- */
+var ticking = false;
+function tick(){
+  ticking = false;
+  var r = scrollDriver.getBoundingClientRect();
+  var totalH = scrollDriver.offsetHeight - window.innerHeight;
+  if (totalH <= 0) totalH = 1;
+  var p = Math.max(0, Math.min(1, -r.top / totalH));
+  var targetFrame = p * (FRAME_COUNT - 1);
+  currentFrame += (targetFrame - currentFrame) * 0.12;
+  if (Math.abs(targetFrame - currentFrame) < 0.04) currentFrame = targetFrame;
+  var idx = Math.round(currentFrame);
+  ensureBitmaps(idx);
+  drawFrame(idx);
 
-  /* fireflies wander + twinkle */
-  document.querySelectorAll(".firefly").forEach(function(f, i){
-    ambient.push(gsap.to(f, { x: "+=" + (18 + i * 7), y: "-=" + (12 + i * 5), duration: 3 + i * 0.7, yoyo: true, repeat: -1, ease: "sine.inOut" }));
-    ambient.push(gsap.to(f, { opacity: 0.15, duration: 1.1 + i * 0.3, yoyo: true, repeat: -1, ease: "sine.inOut", delay: i * 0.4 }));
-  });
-  ScrollTrigger.create({
-    trigger: ".hero", start: "top bottom", end: "bottom top",
-    onToggle: function(self){ ambient.forEach(function(t){ t.paused(!self.isActive); }); }
-  });
+  // Fade at end
+  filmFade.style.opacity = p > 0.88 ? (p - 0.88) / 0.12 : 0;
 
-  /* gentle hero parallax depth (ambient — scroll stays 1:1) */
-  gsap.to(".sun", { yPercent: 20, ease: "none",
-    scrollTrigger: { trigger: ".hero", start: "top top", end: "bottom top", scrub: true } });
-  gsap.to(".treeline", { yPercent: 30, ease: "none",
-    scrollTrigger: { trigger: ".hero", start: "top top", end: "bottom top", scrub: true } });
-  gsap.to(".hero-watermark", { yPercent: -35, ease: "none",
-    scrollTrigger: { trigger: ".hero", start: "top top", end: "bottom top", scrub: true } });
+  // Beats
+  var beats = document.querySelectorAll(".beat");
+  for (var b = 0; b < beats.length; b++){
+    var beat = beats[b];
+    var bi = parseFloat(beat.getAttribute("data-in"));
+    var bp = parseFloat(beat.getAttribute("data-peak"));
+    var bo = parseFloat(beat.getAttribute("data-out"));
+    var alpha = 0;
+    if (p >= bi && p < bp) alpha = (p - bi) / Math.max(0.001, bp - bi);
+    else if (p >= bp && p < bo) alpha = bo > 1.5 ? 1 : 1 - (p - bp) / Math.max(0.001, bo - bp);
+    beat.style.opacity = alpha;
+    var yOff = (1-alpha) * 30;
+    beat.style.transform = "translate(-50%,-50%) translateY(" + yOff + "px)";
+  }
 
-  /* marquee — also paused while offscreen */
-  var track = document.getElementById("marquee-track");
-  track.innerHTML += track.innerHTML;
-  var marqueeTween = gsap.to(track, { xPercent: -50, ease: "none", duration: 26, repeat: -1 });
-  ScrollTrigger.create({
-    trigger: ".marquee", start: "top bottom", end: "bottom top",
-    onToggle: function(self){ marqueeTween.paused(!self.isActive); }
-  });
+  // Chapter readout
+  var ci = Math.min(Math.floor(p * CHAPS.length), CHAPS.length - 1);
+  chapLabel.textContent = CHAPS[Math.max(0, ci)];
+  for (var d = 0; d < 5; d++){
+    var dot = document.getElementById("dot-"+d);
+    if (dot){ dot.className = d === ci ? "chap-dot" : "chap-dot dim"; }
+  }
 
-  /* section reveals — play once, no scrubbing */
-  [
-    [".trust-item", ".trust", 0.08],
-    [".svc-card", ".svc-grid", 0.07],
-    [".muni-grid > *", ".muni", 0.12],
-    [".step", ".steps-grid", 0.12],
-    [".ba-frame", ".ba", 0],
-    [".rev-card", ".rev-grid", 0.1],
-    [".area-grid > *", ".area", 0.12],
-    [".faq-list details", ".faq-list", 0.06]
-  ].forEach(function(cfg){
-    gsap.from(cfg[0], {
-      y: 44, opacity: 0, duration: 0.7, stagger: cfg[2], ease: "power3.out",
-      scrollTrigger: { trigger: cfg[1], start: "top 78%" }
-    });
-  });
-  gsap.from(".final-cta .wrap > *", {
-    y: 30, opacity: 0, duration: 0.7, stagger: 0.1, ease: "power3.out",
-    scrollTrigger: { trigger: ".final-cta", start: "top 75%" }
-  });
-} else {
+  // Progress
+  progressBar.style.width = (p * 100).toFixed(1) + "%";
+
+  // Adaptive header
+  if (idx % 2 === 0 && images[idx] && images[idx].complete) adaptiveCheck(idx);
+}
+
+var headerChecked = -1;
+function adaptiveCheck(idx){
+  if (idx === headerChecked || !images[idx] || !images[idx].complete) return;
+  headerChecked = idx;
+  try {
+    var c2 = document.createElement("canvas"); c2.width = 8; c2.height = 4;
+    var cx = c2.getContext("2d");
+    cx.drawImage(images[idx], 0, 0, 1280, 60, 0, 0, 8, 4);
+    var d = cx.getImageData(0, 0, 8, 4).data;
+    var lum = 0;
+    for (var i = 0; i < d.length; i += 4) lum += 0.2126*d[i] + 0.7152*d[i+1] + 0.0722*d[i+2];
+    lum /= (d.length / 4);
+    var h = document.getElementById("site-header");
+    if (lum > 130) h.classList.add("on-light"); else h.classList.remove("on-light");
+  } catch(e){}
+}
+
+function onScroll(){ if (!ticking){ requestAnimationFrame(tick); ticking = true; } }
+window.addEventListener("scroll", onScroll, {passive: true});
+
+/* ---------- mobile bar ---------- */
+function updateMobileBar(){
+  var bar = document.getElementById("mobile-bar");
+  var r = scrollDriver.getBoundingClientRect();
+  if (r.bottom < window.innerHeight * 0.7) bar.classList.add("show");
+  else bar.classList.remove("show");
+}
+window.addEventListener("scroll", updateMobileBar, {passive: true});
+
+/* ---------- draw first frame immediately ---------- */
+setTimeout(function(){
+  if (images[0] && images[0].complete){ resize(); drawFrame(0); }
+  else { drawFrame(0); }
+  tick();
+}, 200);
+
+// Fallback: tick a few times as frames load
+setTimeout(function(){ tick(); }, 500);
+setTimeout(function(){ tick(); }, 1000);
+setTimeout(function(){ tick(); }, 2000);
+
+/* ---------- reduced motion ---------- */
+if (prefersReduced){
   document.getElementById("mobile-bar").classList.add("show");
 }
 
-/* ---------- dev contract: ?jump + __ready + jank meter ---------- */
+/* ---------- quote form ---------- */
+document.getElementById("quote-form").addEventListener("submit", function(e){
+  e.preventDefault();
+  if (!this.reportValidity()) return;
+  var d = new FormData(this);
+  location.href = "mailto:quotes@example.com?subject=" +
+    encodeURIComponent("Free quote request — " + d.get("service")) +
+    "&body=" + encodeURIComponent("Name: "+d.get("name")+"\nPhone: "+d.get("phone")+"\nService: "+d.get("service")+"\nDetails: "+(d.get("message")||"-"));
+  this.style.display = "none";
+  document.getElementById("form-success").style.display = "block";
+});
+
+/* ---------- dev contract ---------- */
 var deltas = [], last = performance.now();
-(function jank(){
-  var now = performance.now();
-  deltas.push(now - last); last = now;
-  if (deltas.length >= 120){
-    window.__jankMax = Math.max(window.__jankMax || 0, Math.max.apply(null, deltas));
-    deltas.length = 0;
-  }
-  requestAnimationFrame(jank);
-})();
+(function jank(){ var now = performance.now(); deltas.push(now - last); last = now;
+  if (deltas.length >= 120){ window.__jankMax = Math.max(window.__jankMax||0, Math.max.apply(null,deltas)); deltas.length = 0; }
+  requestAnimationFrame(jank); })();
+
 function settle(){
-  ScrollTrigger.refresh();
-  if (JUMP !== null){
-    window.scrollTo(0, +JUMP || 0);
-    ScrollTrigger.update();
-    ScrollTrigger.getAll().forEach(function(st){
-      if (st.animation){ st.animation.totalProgress(st.progress > 0 ? 1 : 0); }
-    });
-  }
+  if (JUMP !== null){ window.scrollTo(0, +JUMP || 0); tick(); }
   window.__ready = true;
 }
 if (document.fonts && document.fonts.ready){
@@ -1131,6 +653,7 @@ if (document.fonts && document.fonts.ready){
 } else {
   window.addEventListener("load", function(){ setTimeout(settle, 300); });
 }
+
 })();
 </script>
 </body>
