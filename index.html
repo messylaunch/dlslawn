@@ -81,11 +81,11 @@ button{font:inherit;cursor:pointer}
 /* ==================== FILM ==================== */
 .scroll-driver{position:relative;height:500vh}
 .film-stage{
-  position:sticky;top:0;left:0;width:100vw;height:100vh;overflow:hidden;
-  background:var(--obsidian);margin:0;
+  position:sticky;top:0;left:0;width:100%;height:100vh;overflow:hidden;
+  background:var(--obsidian);
 }
 .film-stage canvas{
-  position:absolute;top:0;left:0;width:100%;height:100%;display:block;
+  position:absolute;inset:0;display:block;width:100%;height:100%;
 }
 /* Vignette */
 .film-stage::after{
@@ -281,7 +281,7 @@ button{font:inherit;cursor:pointer}
 <!-- ==================== FILM ==================== -->
 <div class="scroll-driver" id="scroll-driver">
   <div class="film-stage" id="film-stage">
-    <canvas id="film-canvas"></canvas>
+    <canvas id="film-canvas" width="1920" height="1080"></canvas>
 
     <!-- Beat overlays -->
     <div class="film-beats">
@@ -449,9 +449,11 @@ var cover = {};
 function resize(){
   var sw = window.innerWidth;
   var sh = window.innerHeight;
-  // Internal resolution — CSS handles display size
+  // Set BOTH internal resolution and display size explicitly
   canvas.width = Math.round(sw * DPR);
   canvas.height = Math.round(sh * DPR);
+  canvas.style.width = sw + "px";
+  canvas.style.height = sh + "px";
   // Object-fit: cover math for drawing
   var sc = Math.max(sw / 1280, sh / 720);
   cover.dw = Math.round(1280 * sc);
@@ -464,6 +466,8 @@ window.addEventListener("resize", function(){
   resize();
   drawFrame(Math.round(currentFrame), true);
 });
+// Re-run resize after fonts/load to correct any initial miscalculation
+window.addEventListener("load", function(){ resize(); drawFrame(Math.round(currentFrame), true); });
 
 /* ---------- frame loader ---------- */
 var IN_FLIGHT = 0, MAX_FLIGHT = 10;
